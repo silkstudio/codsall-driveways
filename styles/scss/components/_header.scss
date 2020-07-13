@@ -1,0 +1,15 @@
+// ==========================================================================
+// Header.scss
+// ==========================================================================
+
+#header-contact {
+	@media screen and (max-width: $tablet-max) {
+		display: none;
+	}
+}
+
+#header-btn {
+	@media screen and (max-width: $mobile) {
+		display: none;
+	}
+}
