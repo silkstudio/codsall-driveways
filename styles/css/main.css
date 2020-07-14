@@ -110,6 +110,11 @@ body::-webkit-scrollbar,
   display: none;
 }
 
+.Row .container {
+  padding: 0;
+  margin: 0;
+}
+
 @media screen and (max-width: 991px) {
   #header-contact {
     display: none;
@@ -119,6 +124,12 @@ body::-webkit-scrollbar,
 @media screen and (max-width: 479px) {
   #header-btn {
     display: none;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .stat__item .Heading__primary {
+    font-size: 13.35rem;
   }
 }
 
