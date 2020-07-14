@@ -140,6 +140,7 @@ body::-webkit-scrollbar,
 }
 .featured-cases__content p {
   opacity: 0.65;
+  transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /*# sourceMappingURL=main.css.map */
