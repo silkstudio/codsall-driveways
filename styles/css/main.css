@@ -132,4 +132,15 @@ body::-webkit-scrollbar,
   }
 }
 
+.featured-cases__content:hover .featured-cases__category {
+  opacity: 1;
+}
+.featured-cases__content p {
+  opacity: 0.65;
+}
+.featured-cases__content .featured-cases__category {
+  opacity: 0;
+  transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 /*# sourceMappingURL=main.css.map */
