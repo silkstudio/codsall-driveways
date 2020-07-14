@@ -104,6 +104,13 @@ html {
   font-size: 0.8vw;
 }
 
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+#luxy::-webkit-scrollbar {
+  scrollbar-color: rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0);
+}
+
 @media screen and (max-width: 991px) {
   #header-contact {
     display: none;
