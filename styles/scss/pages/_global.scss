@@ -7,6 +7,8 @@ html {
 	font-size: 0.8vw;
 }
 
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
 #luxy::-webkit-scrollbar {
 	display: none;
 }
