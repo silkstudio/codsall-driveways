@@ -17,12 +17,22 @@
 		opacity: 0;
 		transition: $transition;
 	}
+	.arrow-link {
+		color: #000000;
+		opacity: 0;
+		position: absolute;
+		top: auto;
+		left: auto;
+		right: auto;
+		bottom: 1.75rem;
+	}
 }
 
 .featured-cases__content {
 	&:hover {
-		.featured-cases__category {
-			opacity: 1;
+		.featured-cases__category,
+		.arrow-link {
+			opacity: 0.5;
 		}
 	}
 }

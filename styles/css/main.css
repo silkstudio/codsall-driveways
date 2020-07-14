@@ -139,9 +139,19 @@ body::-webkit-scrollbar,
   opacity: 0;
   transition: all 0.9 cubic-bezier(0.19, 1, 0.22, 1);
 }
+.featured-cases__content .arrow-link {
+  color: #000000;
+  opacity: 0;
+  position: absolute;
+  top: auto;
+  left: auto;
+  right: auto;
+  bottom: 1.75rem;
+}
 
-.featured-cases__content:hover .featured-cases__category {
-  opacity: 1;
+.featured-cases__content:hover .featured-cases__category,
+.featured-cases__content:hover .arrow-link {
+  opacity: 0.5;
 }
 
 /*# sourceMappingURL=main.css.map */
