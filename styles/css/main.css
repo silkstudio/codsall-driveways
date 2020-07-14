@@ -110,10 +110,8 @@ body::-webkit-scrollbar,
   display: none;
 }
 
-.Row .container,
-.Row .container.container-6clm {
-  padding: 0;
-  margin: 0;
+.Testimonial__img {
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(255, 196, 0, 0.12), 0px 16px 24px rgba(255, 196, 0, 0.2);
 }
 
 @media screen and (max-width: 991px) {
@@ -132,6 +130,11 @@ body::-webkit-scrollbar,
   .stat__item .Heading__primary {
     font-size: 13.35rem;
   }
+}
+
+.Featured-cases__cursor {
+  pointer-events: none;
+  cursor: none;
 }
 
 /*# sourceMappingURL=main.css.map */
