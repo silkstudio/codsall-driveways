@@ -110,7 +110,7 @@ body::-webkit-scrollbar,
   display: none;
 }
 
-.Testimonial__img {
+.testimonial__img {
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(255, 196, 0, 0.12), 0px 16px 24px rgba(255, 196, 0, 0.2);
 }
 
@@ -127,14 +127,19 @@ body::-webkit-scrollbar,
 }
 
 @media screen and (max-width: 479px) {
-  .stat__item .Heading__primary {
+  .stat__item .heading__primary {
     font-size: 13.35rem;
   }
 }
 
-.Featured-cases__cursor {
-  pointer-events: none;
-  cursor: none;
+.featured-cases__content {
+  transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.featured-cases__content:hover p {
+  opacity: 1;
+}
+.featured-cases__content p {
+  opacity: 0.65;
 }
 
 /*# sourceMappingURL=main.css.map */

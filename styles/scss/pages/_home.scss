@@ -2,13 +2,21 @@
 // Home page
 // ==========================================================================
 
-.stat__item .Heading__primary {
+// Fix size of figures on mobile view
+.stat__item .heading__primary {
 	@media screen and (max-width: $mobile) {
 		font-size: 13.35rem;
 	}
 }
 
-.Featured-cases__cursor {
-	pointer-events: none;
-	cursor: none;
+.featured-cases__content {
+	transition: $transition;
+	&:hover {
+		p {
+			opacity: 1;
+		}
+	}
+	p {
+		opacity: 0.65;
+	}
 }
