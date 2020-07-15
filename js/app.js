@@ -1,3 +1,5 @@
+// Init
+
 const editorStyles = document.getElementById('editor-styles');
 
 let intViewportWidth = window.innerWidth;
@@ -26,3 +28,7 @@ function init() {
 }
 
 window.onload = init();
+
+////////
+////////
+////////
