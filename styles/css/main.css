@@ -169,4 +169,8 @@ body::-webkit-scrollbar,
   opacity: 1;
 }
 
+#fc__scroll {
+  transition: all 0.9s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
 /*# sourceMappingURL=main.css.map */

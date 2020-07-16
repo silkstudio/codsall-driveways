@@ -29,12 +29,11 @@ window.onresize = setTimeout(recalcMetrics, 1000);
 //
 // Define new scrollbooster instance
 const fcScroll = new ScrollBooster({
-	viewport               : fcScrollContainer,
-	content                : fcScrollContent,
-	direction              : 'horizontal',
-	scrollMode             : 'transform',
-	friction               : 0.1,
-	dragDirectionTolerance : 200
+	viewport   : fcScrollContainer,
+	content    : fcScrollContent,
+	direction  : 'horizontal',
+	scrollMode : 'transform',
+	friction   : 0.1
 });
 
 //
@@ -92,11 +91,11 @@ const fcScrollLeft = () => {
 	}
 };
 
+//
+// Mouse interactions
 fcScrollArrwRight.addEventListener('click', fcScrollRight);
 fcScrollArrwLeft.addEventListener('click', fcScrollLeft);
 
-//
-// Mouse interactions
 fcScrollContent.onmouseover = () => {
 	fcScrollContent.style.cursor = 'grab';
 };
@@ -109,5 +108,19 @@ fcScrollContent.onmousedown = () => {
 
 fcScrollContent.onmouseup = () => {
 	fcScrollContent.style.cursor = 'grab';
+	setTimeout(setTranslateValue, 1000);
+};
+
+//
+// Touch interactions
+fcScrollArrwRight.addEventListener('touchstart', fcScrollRight);
+fcScrollArrwRight.addEventListener('touchstart', fcScrollLeft);
+
+fcScrollContent.ontouchstart = () => {
+	//Fallback in case mouse leaves the viewport before releasing click
+	setTimeout(setTranslateValue, 900);
+};
+
+fcScrollContent.ontouchend = () => {
 	setTimeout(setTranslateValue, 1000);
 };
