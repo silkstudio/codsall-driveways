@@ -1,26 +1,113 @@
-// Click and drag container
+// ==========================================================================
+// Home.js
+// ==========================================================================
 
-const scrollContainer = document.querySelector('.featured-cases');
-const scrollContent = document.getElementById('cs__scroll');
+// FEATURED CASE STUDIES, CLICK-AND-DRAG MODULE //
 
-const featuredCases = () => {
-	new ScrollBooster({
-		viewport   : scrollContainer,
-		content    : scrollContent,
-		direction  : 'horizontal',
-		scrollMode : 'transform',
-		friction   : 0.1
-	});
+//
+// Define variables
+const fcScrollContainer = document.querySelector('.featured-cases');
+const fcScrollList = document.querySelector('.featured-cases__list');
+const fcScrollContent = document.getElementById('fc__scroll');
+const fcScrollArrwLeft = document.getElementById('fc-arrow--left');
+const fcScrollArrwRight = document.getElementById('fc-arrow--right');
+let fcChildren = fcScrollList.children;
+let cw = fcChildren.item(0).clientWidth;
+let translateX_Val = 1;
+let stepCount;
+let updatedNextVal = 776;
+let updatedPrevVal = 0;
+let fcScrollMax = cw * (fcChildren.length - 2);
+
+//
+// Recalculate metrics if the window is resized
+const recalcMetrics = () => {
+	let cw = fcChildren.item(0).clientWidth;
+};
+window.onresize = setTimeout(recalcMetrics, 1000);
+
+//
+// Define new scrollbooster instance
+const fcScroll = new ScrollBooster({
+	viewport               : fcScrollContainer,
+	content                : fcScrollContent,
+	direction              : 'horizontal',
+	scrollMode             : 'transform',
+	friction               : 0.1,
+	dragDirectionTolerance : 200
+});
+
+//
+// Update the arrow values if module is clicked-and-dragged
+const setTranslateValue = () => {
+	// Get the transform value
+	translateX_Val = fcScrollContent.style.transform;
+	// Convert it to a number
+	translateX_Val = Math.round(translateX_Val.replace(/[^\d.]/g, ''));
+	// Calculate the stepCount
+	stepCount = Math.floor(translateX_Val / cw);
+	// Set the new next and previous values
+	updatedNextVal = stepCount * cw + cw;
+	updatedPrevVal = stepCount * cw;
+	// If user has reached the end, stop them from scrolling any further
+	if (updatedNextVal >= fcScrollMax) {
+		updatedNextVal = fcScrollMax;
+	} else if (updatedPrevVal <= 0) {
+		updatedPrevVal = 0;
+		updatedNextVal = cw;
+	}
 };
 
-scrollContent.onmouseover = () => {
-	scrollContent.style.cursor = 'grab';
-};
-scrollContent.onmousedown = () => {
-	scrollContent.style.cursor = 'grabbing';
-};
-scrollContent.onmouseup = () => {
-	scrollContent.style.cursor = 'grab';
+//
+// Right arrow click
+const fcScrollRight = () => {
+	// On click, scroll to the updatedNextVal
+	fcScroll.scrollTo({ x: updatedNextVal, y: 0 });
+	// Increase the exsisting value by clientWidth
+	updatedNextVal += cw;
+	// If the user has reached the end, stop them from scrolling further
+	if (updatedNextVal > fcScrollMax) {
+		updatedNextVal = fcScrollMax;
+		updatedPrevVal = updatedNextVal - cw;
+	} else {
+		updatedPrevVal = updatedNextVal - cw * 2;
+	}
 };
 
-featuredCases();
+//
+// Left arrow click
+const fcScrollLeft = () => {
+	// On click, scroll to the updatedPrevVal
+	fcScroll.scrollTo({ x: updatedPrevVal, y: 0 });
+	// Check whether user has come from the end and if not decrease both values by clientWidth
+	if (updatedNextVal === fcScrollMax && updatedPrevVal === fcScrollMax - cw) {
+		updatedNextVal = fcScrollMax;
+		updatedPrevVal = fcScrollMax - cw * 2;
+	} else if (updatedPrevVal <= 0 || updatedNextVal <= cw) {
+		updatedPrevVal = 0;
+		updatedNextVal = cw;
+	} else {
+		updatedPrevVal -= cw;
+		updatedNextVal -= cw;
+	}
+};
+
+fcScrollArrwRight.addEventListener('click', fcScrollRight);
+fcScrollArrwLeft.addEventListener('click', fcScrollLeft);
+
+//
+// Mouse interactions
+fcScrollContent.onmouseover = () => {
+	fcScrollContent.style.cursor = 'grab';
+};
+
+fcScrollContent.onmousedown = () => {
+	fcScrollContent.style.cursor = 'grabbing';
+	//Fallback in case mouse leaves the viewport before releasing click
+	setTimeout(setTranslateValue, 900);
+};
+
+fcScrollContent.onmouseup = () => {
+	fcScrollContent.style.cursor = 'grab';
+	setTimeout(setTranslateValue, 1000);
+};
