@@ -124,3 +124,45 @@ fcScrollContent.ontouchstart = () => {
 fcScrollContent.ontouchend = () => {
 	setTimeout(setTranslateValue, 1000);
 };
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+
+// TESTIMONIAL SLIDER //
+
+//
+// Calculate 1 REM
+let relEM;
+calcRem = () => {
+	relEM = window.innerWidth / 100 * 0.83;
+};
+window.onresize = setTimeout(calcRem, 1000);

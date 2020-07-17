@@ -9,6 +9,12 @@ $tablet-min: 768px;
 $mobile: 479px;
 
 // Colours
+$yellow: rgb(255, 196, 0);
+$yellowLight: rgb(255, 247, 222);
+$grey: rgb(159, 159, 159);
+$white: rgb(252, 253, 255);
+$black: rgb(31, 34, 33);
+$offWhite: rgb(246, 247, 249);
 
 // Animations
 $transition: all 0.9s cubic-bezier(.19, 1, .22, 1);
@@ -16,3 +22,10 @@ $transition: all 0.9s cubic-bezier(.19, 1, .22, 1);
 // Shadows
 $yellowShadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(255, 196, 0, 0.12),
 	0px 16px 24px rgba(255, 196, 0, 0.2);
+
+$darkShadow: 3px 20px 40px rgba(18, 20, 63, 0.2);
+
+// Corners
+$desktopRadius: 0.5rem;
+$tabletRadius: 0.5rem;
+$mobileRadius: 2rem;

@@ -2,12 +2,29 @@
 // Home page
 // ==========================================================================
 
+// ABOUT SECTION //
+
 // Fix size of figures on mobile view
-.stat__item .heading__primary {
-	@media screen and (max-width: $mobile) {
-		font-size: 13.35rem;
+.stats__item {
+	.heading__primary {
+		@media screen and (max-width: $mobile) {
+			font-size: 17rem;
+			line-height: 100%;
+		}
+	}
+	.p-small {
+		@media screen and (max-width: $tablet-max) {
+			white-space: nowrap;
+		}
 	}
 }
+
+.Testimonial-inline {
+	.icon__img {
+		box-shadow: $yellowShadow;
+	}
+}
+// CASE STUDIES SECTION //
 
 .featured-cases__content {
 	p {
@@ -48,6 +65,63 @@
 	}
 }
 
-#fc__scroll {
+.featured-cases__scroll {
 	transition: $transition;
+}
+
+#fc-arrow--left {
+	@media screen and (max-width: $tablet-max) {
+		display: none;
+	}
+}
+
+// WHY SECTION //
+
+.why__section {
+	.why__content {
+		p {
+			margin-top: 1rem;
+		}
+	}
+	.hr {
+		background-color: $grey;
+		opacity: .2;
+		margin: 7.5rem auto;
+		@media screen and (max-width: $mobile) {
+			margin: 15rem auto;
+		}
+	}
+	.why__benefit {
+		.heading__dark {
+			margin-top: 1.5rem;
+			margin-bottom: .75rem;
+			@media screen and (max-width: $mobile) {
+				margin-top: 5rem;
+			}
+		}
+		.icon__img {
+			box-shadow: $yellowShadow;
+		}
+	}
+}
+
+// TESTIMONIAL SLIDER //
+
+.testimonial-slider {
+	h4 {
+		padding-bottom: 5rem;
+		@media screen and (max-width: $mobile) {
+			padding-bottom: 20rem;
+		}
+	}
+	.icon__img {
+		box-shadow: $darkShadow;
+	}
+	h6 {
+		margin-top: 1.5rem;
+		margin-bottom: 0;
+	}
+	p {
+		opacity: .5;
+	}
 }

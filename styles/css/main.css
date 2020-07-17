@@ -110,10 +110,6 @@ body::-webkit-scrollbar,
   display: none;
 }
 
-.testimonial__img {
-  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(255, 196, 0, 0.12), 0px 16px 24px rgba(255, 196, 0, 0.2);
-}
-
 @media screen and (max-width: 991px) {
   #header-contact {
     display: none;
@@ -127,9 +123,19 @@ body::-webkit-scrollbar,
 }
 
 @media screen and (max-width: 479px) {
-  .stat__item .heading__primary {
-    font-size: 13.35rem;
+  .stats__item .heading__primary {
+    font-size: 17rem;
+    line-height: 100%;
   }
+}
+@media screen and (max-width: 991px) {
+  .stats__item .p-small {
+    white-space: nowrap;
+  }
+}
+
+.Testimonial-inline .icon__img {
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(255, 196, 0, 0.12), 0px 16px 24px rgba(255, 196, 0, 0.2);
 }
 
 .featured-cases__content p {
@@ -169,8 +175,59 @@ body::-webkit-scrollbar,
   opacity: 1;
 }
 
-#fc__scroll {
+.featured-cases__scroll {
   transition: all 0.9s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+@media screen and (max-width: 991px) {
+  #fc-arrow--left {
+    display: none;
+  }
+}
+
+.why__section .why__content p {
+  margin-top: 1rem;
+}
+.why__section .hr {
+  background-color: #9f9f9f;
+  opacity: 0.2;
+  margin: 7.5rem auto;
+}
+@media screen and (max-width: 479px) {
+  .why__section .hr {
+    margin: 15rem auto;
+  }
+}
+.why__section .why__benefit .heading__dark {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+@media screen and (max-width: 479px) {
+  .why__section .why__benefit .heading__dark {
+    margin-top: 5rem;
+  }
+}
+.why__section .why__benefit .icon__img {
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(255, 196, 0, 0.12), 0px 16px 24px rgba(255, 196, 0, 0.2);
+}
+
+.testimonial-slider h4 {
+  padding-bottom: 5rem;
+}
+@media screen and (max-width: 479px) {
+  .testimonial-slider h4 {
+    padding-bottom: 20rem;
+  }
+}
+.testimonial-slider .icon__img {
+  box-shadow: 3px 20px 40px rgba(18, 20, 63, 0.2);
+}
+.testimonial-slider h6 {
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+}
+.testimonial-slider p {
+  opacity: 0.5;
 }
 
 /*# sourceMappingURL=main.css.map */
