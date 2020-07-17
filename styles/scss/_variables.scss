@@ -22,10 +22,9 @@ $transition: all 0.9s cubic-bezier(.19, 1, .22, 1);
 // Shadows
 $yellowShadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(255, 196, 0, 0.12),
 	0px 16px 24px rgba(255, 196, 0, 0.2);
-
 $darkShadow: 3px 20px 40px rgba(18, 20, 63, 0.2);
 
 // Corners
-$desktopRadius: 0.5rem;
-$tabletRadius: 0.5rem;
+$desktopRadius: .35rem;
+$tabletRadius: .5rem;
 $mobileRadius: 2rem;
