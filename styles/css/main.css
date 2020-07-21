@@ -142,6 +142,15 @@ body::-webkit-scrollbar,
   display: none;
 }
 
+.main {
+  transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  opacity: 0;
+}
+
+.main__in-view {
+  opacity: 1;
+}
+
 a:-webkit-any-link {
   color: inherit;
 }
