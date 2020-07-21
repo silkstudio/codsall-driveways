@@ -1,7 +1,9 @@
 // ==========================================================================
-// Componenets directory
+// Call-to-action.scss
 // ==========================================================================
 
-@import 'header';
-@import 'footer';
-@import 'call-to-action';
+.section.cta__section {
+	.cta__form {
+		margin-top: $lns-space-small;
+	}
+}

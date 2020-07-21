@@ -2,29 +2,93 @@
 // Variables
 // ==========================================================================
 
-// Breakpoints
-$desktop: 992px;
-$tablet-max: 991px;
-$tablet-min: 768px;
-$mobile: 479px;
+// Units
+$lns-unit: 1rem;
 
-// Colours
-$yellow: rgb(255, 196, 0);
-$yellowLight: rgb(255, 247, 222);
-$grey: rgb(159, 159, 159);
-$white: rgb(252, 253, 255);
-$black: rgb(31, 34, 33);
-$offWhite: rgb(246, 247, 249);
+// Breakpoints
+$lns-breakpoint-desktop: 992px;
+$lns-breakpoint-tablet-max: 991px;
+$lns-breakpoint-tablet-min: 768px;
+$lns-breakpoint-mobile-landscape: 480px;
+$lns-breakpoint-mobile: 479px;
+
+// System colours
+$lns-colour-purple: hsla(230, 84%, 63%, 1);
+$lns-colour-salmon: hsla(359, 98%, 68%, 1);
+$lns-colour-green: rgb(14, 114, 62);
+$lns-colour-blue: hsla(201, 100%, 55%, 1);
+$lns-colour-red: hsla(356, 86%, 55%, 1);
+$lns-colour-yellow: hsla(40, 100%, 66%, 1);
+$lns-colour-grey8: hsla(230, 11%, 19%, 1);
+$lns-colour-grey7: hsla(230, 10%, 30%, 1);
+$lns-colour-grey6: hsla(230, 9%, 45%, 1);
+$lns-colour-grey5: hsla(230, 8%, 60%, 1);
+$lns-colour-grey4: hsla(230, 7%, 75%, 1);
+$lns-colour-grey3: hsla(230, 7%, 84%, 1);
+$lns-colour-grey2: hsla(220, 7%, 92%, 1);
+$lns-colour-grey1: hsla(240, 7%, 97%, 1);
+$lns-colour-white: hsla(230, 7%, 100%, 1);
+
+// Brand colours
+$lns-brand-primary: hsla(46, 100%, 50%, 1);
+$lns-brand-primary--light: hsla(45, 100%, 94%, 1);
+$lns-brand-secondary: hsla(0, 0%, 70%, 1);
+$lns-brand-white: hsla(220, 100%, 99%, 1);
+$lns-brand-black: hsla(160, 5%, 13%, 1);
+$lns-brand-offwhite: hsla(220, 20%, 97%, 1);
 
 // Animations
-$transition: all 0.9s cubic-bezier(.19, 1, .22, 1);
+$lns-transition: all 0.9s cubic-bezier(.19, 1, .22, 1);
 
 // Shadows
-$yellowShadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(255, 196, 0, 0.12),
-	0px 16px 24px rgba(255, 196, 0, 0.2);
-$darkShadow: 3px 20px 40px rgba(18, 20, 63, 0.2);
+$lns-shadow-default: 48px 48px 100px -20px hsla(0, 0%, 0%, 0.5);
+$lns-shadow-dark: 3px 20px 40px hsla(237, 56%, 16%, 0.2);
+$lns-shadow-yellow: 0px 0px 1px hsla(0, 0%, 0%, 0.04), 0px 2px 6px hsla(46, 100%, 50%, 0.12),
+	0px 16px 24px hsla(46, 100%, 50%, 0.2);
 
 // Corners
-$desktopRadius: .35rem;
-$tabletRadius: .5rem;
-$mobileRadius: 2rem;
+$lns-radius-desktop: .35rem;
+$lns-radius-tablet: .5rem;
+$lns-radius-mobile: 2rem;
+
+// Spaces
+$lns-space-xsmall: 1rem;
+$lns-space-small: 3rem;
+$lns-space-medium: 5rem;
+$lns-space-large: 10rem;
+$lns-space-xlarge: 15rem;
+$lns-space-xxlarge: 25rem;
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+$lns-fontSize-small: calc(1.5 * var($lns-unit));
+$lns-fontSize-medium: calc(1.75 * var($lns-unit));
+$lns-fontSize-large: calc(2.25 * var($lns-unit));
+$lns-fontSize-xlarge: calc(2.8 * var($lns-unit));
+$lns-fontSize-xxlarge: calc(4 * var($lns-unit));

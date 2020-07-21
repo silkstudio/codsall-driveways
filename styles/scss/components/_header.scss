@@ -3,13 +3,13 @@
 // ==========================================================================
 
 #header-contact {
-	@media screen and (max-width: $tablet-max) {
+	@media screen and (max-width: $lns-breakpoint-tablet-max) {
 		display: none;
 	}
 }
 
 #header-btn {
-	@media screen and (max-width: $mobile) {
+	@media screen and (max-width: $lns-breakpoint-mobile) {
 		display: none;
 	}
 }

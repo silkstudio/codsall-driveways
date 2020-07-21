@@ -1,0 +1,20 @@
+// ==========================================================================
+// About.scss
+// ==========================================================================
+
+.section.about__hero {
+	.container {
+		justify-content: start;
+	}
+	h1 {
+		margin-top: 7.75rem;
+		margin-bottom: 7.75rem;
+	}
+	.about-hero__img {
+		box-shadow: $lns-shadow-default;
+	}
+}
+
+.two-clm__img {
+	box-shadow: $lns-shadow-default;
+}

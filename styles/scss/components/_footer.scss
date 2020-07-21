@@ -1,0 +1,112 @@
+// ==========================================================================
+// Footer.scss
+// ==========================================================================
+
+.footer {
+	.container.container-12clm {
+		padding-bottom: 0;
+	}
+
+	.site__logo {
+		@media screen and (min-width: $lns-breakpoint-tablet-min) {
+			transform: translate(0, -50%);
+		}
+		@media screen and (max-width: $lns-breakpoint-mobile) {
+			margin-top: $lns-space-large;
+			margin-bottom: $lns-space-xlarge;
+		}
+	}
+
+	.footer__contact-info {
+		.row {
+			margin-bottom: (0.4 * $lns-space-xsmall);
+			@media screen and (max-width: $lns-breakpoint-mobile) {
+				margin-bottom: (.75 * $lns-space-small);
+			}
+			&:first-child {
+				margin-bottom: (1.5 * $lns-space-xsmall);
+				@media screen and (max-width: $lns-breakpoint-mobile) {
+					margin-bottom: (.75 * $lns-space-large);
+				}
+			}
+		}
+		.p-small {
+			opacity: .625;
+			transition: $lns-transition;
+			cursor: pointer;
+			@media screen and (max-width: $lns-breakpoint-mobile) {
+				opacity: .75;
+			}
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+
+	.footer__clm {
+		h6 {
+			margin-bottom: (1.5 * $lns-space-xsmall);
+			@media screen and (max-width: $lns-breakpoint-mobile) {
+				margin-bottom: $lns-space-medium;
+			}
+		}
+		.p-large {
+			margin-top: 0;
+			margin-bottom: $lns-space-xsmall;
+			opacity: .5;
+			transition: $lns-transition;
+			@media screen and (max-width: $lns-breakpoint-mobile) {
+				margin-bottom: $lns-space-small;
+				opacity: .75;
+			}
+			&:hover {
+				opacity: 1;
+			}
+		}
+		&:first-child {
+			@media screen and (max-width: $lns-breakpoint-mobile) {
+				.footer__contact-info,
+				.social-icon {
+					display: none;
+				}
+			}
+		}
+		&:last-child {
+			@media screen and (max-width: $lns-breakpoint-mobile) {
+				display: none;
+			}
+		}
+	}
+
+	#mobile-contact-info {
+		@media screen and (min-width: $lns-breakpoint-mobile-landscape) {
+			display: none;
+		}
+	}
+}
+
+// Bookend
+.footer__bookend {
+	margin-top: $lns-space-small;
+	@media screen and (max-width: $lns-breakpoint-mobile) {
+		margin-top: $lns-space-xlarge;
+	}
+	p {
+		font-size: 0.875rem;
+		opacity: .5;
+		@media screen and (max-width: $lns-breakpoint-mobile) {
+			font-size: 4rem;
+		}
+	}
+}
+
+// Silk Studio Logo
+.silkstudio {
+	.silkstudio__logo {
+		transition: $lns-transition;
+		opacity: .25;
+		&:hover {
+			opacity: 1;
+		}
+	}
+}
