@@ -16,8 +16,15 @@
 // App.js
 // ==========================================================================
 
-// Page transitions
+// Page transition
 const transitionElement = document.querySelector('.main');
+transitionElement.style.display = 'hidden';
+
+const linkClasses = [
+	'nav-link',
+	'arrow-link',
+	'site__logo'
+];
 
 const delay = (URL) => {
 	transitionElement.classList.remove('main__in-view');
@@ -26,13 +33,25 @@ const delay = (URL) => {
 	}, 250);
 };
 
+const checkClasses = (el) => {
+	for (let i = 0; i < linkClasses.length; i++) {
+		if (el.classList.contains(linkClasses[i])) {
+			return true;
+		}
+	}
+};
+
 document.addEventListener('click', function(event) {
-	if (event.target.tagName === 'A') {
+	if (checkClasses(event.target)) {
 		event.preventDefault();
 		delay(event.target.href);
-	} else if (event.target.parentNode.tagName === 'A') {
+		console.log('target');
+	} else if (checkClasses(event.target.parentNode)) {
 		event.preventDefault();
 		delay(event.target.parentNode.href);
+		console.log('parent');
+	} else {
+		return;
 	}
 });
 
@@ -76,6 +95,7 @@ init = () => {
 			wrapperSpeed : 0.065
 		});
 	}
+	transitionElement.style.display = 'block';
 	transitionElement.classList.add('main__in-view');
 };
 
