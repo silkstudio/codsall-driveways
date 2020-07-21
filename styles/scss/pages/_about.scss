@@ -18,3 +18,18 @@
 .two-clm__img {
 	box-shadow: $lns-shadow-default;
 }
+
+.two-clm__text {
+	p {
+		margin-top: $lns-space-xsmall;
+	}
+}
+
+.tick-list {
+	li {
+		margin-top: 2 * $lns-space-xsmall;
+	}
+	p {
+		margin: 0;
+	}
+}

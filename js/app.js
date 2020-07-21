@@ -18,19 +18,25 @@
 
 // Page transition
 const transitionElement = document.querySelector('.main');
-transitionElement.style.display = 'hidden';
+
+const setTransitioninInitState = () => {
+	transitionElement.classList.remove('main__in-view');
+	transitionElement.style.display = 'none';
+	console.log('initial state set, loading...');
+};
 
 const linkClasses = [
 	'nav-link',
 	'arrow-link',
-	'site__logo'
+	'site__logo',
+	'footer__link'
 ];
 
 const delay = (URL) => {
 	transitionElement.classList.remove('main__in-view');
 	setTimeout(function() {
 		window.location = URL;
-	}, 250);
+	}, 500);
 };
 
 const checkClasses = (el) => {
@@ -84,7 +90,9 @@ let isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.
 
 */
 // Initialise page
-init = () => {
+pageSetup = () => {
+	console.log('page loaded.');
+	transitionElement.style.display = 'block';
 	//editorStyles.parentNode.removeChild(editorStyles);
 	//mobileNav.style.height = `${intViewportHeight}px`;
 	//mobileNav.style.width = `${intViewportWidth}px`;
@@ -95,8 +103,12 @@ init = () => {
 			wrapperSpeed : 0.065
 		});
 	}
-	transitionElement.style.display = 'block';
 	transitionElement.classList.add('main__in-view');
 };
 
-window.onload = init();
+async function init() {
+	setTransitioninInitState();
+	await setTimeout(pageSetup, 1);
+}
+
+window.onloadstart = init();

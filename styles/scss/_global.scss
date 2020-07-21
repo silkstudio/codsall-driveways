@@ -15,6 +15,10 @@ body::-webkit-scrollbar,
 	display: none;
 }
 
+a:-webkit-any-link {
+	color: inherit;
+}
+
 .main {
 	transition: all .8s cubic-bezier(0.25, 1, 0.5, 1);
 	opacity: 0;
@@ -23,6 +27,7 @@ body::-webkit-scrollbar,
 	opacity: 1;
 }
 
-a:-webkit-any-link {
-	color: inherit;
+.hr {
+	background-color: $lns-brand-secondary;
+	opacity: .2;
 }

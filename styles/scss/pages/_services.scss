@@ -1,8 +1,10 @@
 // ==========================================================================
-// Componenets directory
+// Services.scss
 // ==========================================================================
 
-@import 'header';
-@import 'footer';
-@import 'call-to-action';
-@import 'process-slider';
+.section.services__hero {
+	h1 {
+		margin-top: 0.75 * $lns-space-large;
+		margin-bottom: 0.75 * $lns-space-large;
+	}
+}

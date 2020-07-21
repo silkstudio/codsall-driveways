@@ -85,8 +85,6 @@
 		}
 	}
 	.hr {
-		background-color: $lns-brand-secondary;
-		opacity: .2;
 		margin: $lns-space-medium auto;
 		@media screen and (max-width: $lns-breakpoint-mobile) {
 			margin: $lns-space-xlarge auto;

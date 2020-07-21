@@ -142,6 +142,10 @@ body::-webkit-scrollbar,
   display: none;
 }
 
+a:-webkit-any-link {
+  color: inherit;
+}
+
 .main {
   transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
   opacity: 0;
@@ -151,8 +155,9 @@ body::-webkit-scrollbar,
   opacity: 1;
 }
 
-a:-webkit-any-link {
-  color: inherit;
+.hr {
+  background-color: #b3b3b3;
+  opacity: 0.2;
 }
 
 @media screen and (max-width: 991px) {
@@ -280,6 +285,22 @@ a:-webkit-any-link {
   margin-top: 3rem;
 }
 
+.standard-tab {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                  supported by Chrome and Opera */
+}
+
 @media screen and (max-width: 479px) {
   .stats__item .heading__primary {
     font-size: 17rem;
@@ -347,8 +368,6 @@ a:-webkit-any-link {
   margin-top: 1rem;
 }
 .why__section .hr {
-  background-color: #b3b3b3;
-  opacity: 0.2;
   margin: 5rem auto;
 }
 @media screen and (max-width: 479px) {
@@ -472,6 +491,22 @@ a:-webkit-any-link {
 
 .two-clm__img {
   box-shadow: 48px 48px 100px -20px rgba(0, 0, 0, 0.5);
+}
+
+.two-clm__text p {
+  margin-top: 1rem;
+}
+
+.tick-list li {
+  margin-top: 2rem;
+}
+.tick-list p {
+  margin: 0;
+}
+
+.section.services__hero h1 {
+  margin-top: 7.5rem;
+  margin-bottom: 7.5rem;
 }
 
 /*# sourceMappingURL=main.css.map */
