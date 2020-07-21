@@ -100,7 +100,7 @@ pageSetup = () => {
 	if (!isMobile && intViewportWidth >= 992) {
 		luxy.init({
 			wrapper      : '#luxy',
-			wrapperSpeed : 0.065
+			wrapperSpeed : 0.08
 		});
 	}
 	transitionElement.classList.add('main__in-view');
