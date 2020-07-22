@@ -91,7 +91,6 @@ let isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.
 */
 // Initialise page
 pageSetup = () => {
-	console.log('page loaded.');
 	transitionElement.style.display = 'block';
 	//editorStyles.parentNode.removeChild(editorStyles);
 	//mobileNav.style.height = `${intViewportHeight}px`;
@@ -100,9 +99,10 @@ pageSetup = () => {
 	if (!isMobile && intViewportWidth >= 992) {
 		luxy.init({
 			wrapper      : '#luxy',
-			wrapperSpeed : 0.08
+			wrapperSpeed : 1
 		});
 	}
+	console.log('App loaded.');
 	transitionElement.classList.add('main__in-view');
 };
 

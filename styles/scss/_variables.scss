@@ -50,6 +50,15 @@ $lns-shadow-yellow: 0px 0px 1px hsla(0, 0%, 0%, 0.04), 0px 2px 6px hsla(46, 100%
 $lns-radius-desktop: .35rem;
 $lns-radius-tablet: .5rem;
 $lns-radius-mobile: 2rem;
+.default-rad {
+	border-radius: $lns-radius-desktop;
+	@media screen and (max-width: $lns-breakpoint-tablet-max) {
+		border-radius: $lns-radius-tablet;
+	}
+	@media screen and (max-width: $lns-breakpoint-mobile) {
+		border-radius: $lns-radius-mobile;
+	}
+}
 
 // Spaces
 $lns-space-xsmall: 1rem;
