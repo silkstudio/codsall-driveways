@@ -1,0 +1,33 @@
+// ==========================================================================
+// Case-studies.scss
+// ==========================================================================
+
+#case-studies__hero {
+	color: $lns-brand-white;
+	.container.container-full-width {
+		padding: 0;
+	}
+	.container.container-11clm {
+		justify-content: flex-end;
+		padding: 0 0 5rem 0;
+	}
+	.hero-slider__content {
+		transition: all 1.2s linear;
+		opacity: 0;
+	}
+}
+
+.case-study__grid {
+	div:nth-child(5) {
+		grid-column-start: 1;
+		grid-column-end: 3;
+		grid-row-start: 3;
+		grid-row-end: 4;
+		.featured-cases__item {
+			width: 100rem;
+			.featured-cases__content {
+				width: 42.1875rem;
+			}
+		}
+	}
+}

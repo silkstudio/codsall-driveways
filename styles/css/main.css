@@ -337,6 +337,129 @@ a:-webkit-any-link {
                   supported by Chrome and Opera */
 }
 
+/* Slider */
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.slick-track:before,
+.slick-track:after {
+  display: table;
+  content: "";
+}
+
+.slick-track:after {
+  clear: both;
+}
+
+.slick-loading .slick-track {
+  visibility: hidden;
+}
+
+.slick-slide {
+  display: none;
+  float: left;
+  height: 100%;
+  min-height: 1px;
+}
+
+[dir=rtl] .slick-slide {
+  float: right;
+}
+
+.slick-slide img {
+  display: block;
+}
+
+.slick-slide.slick-loading img {
+  display: none;
+}
+
+.slick-slide.dragging img {
+  pointer-events: none;
+}
+
+.slick-initialized .slick-slide {
+  display: block;
+}
+
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
+
+.slick-arrow.slick-hidden {
+  display: none;
+}
+
+.slick-slider:focus,
+.slick-list:focus,
+.slick-list.dragging:focus,
+.slick-track:focus,
+.slick-slide:focus,
+[dir=rtl] .slick-slide:focus,
+.slick-slide img:focus,
+.slick-slide.slick-loading img:focus,
+.slick-slide.dragging img:focus,
+.slick-initialized .slick-slide:focus,
+.slick-loading .slick-slide:focus,
+.slick-vertical .slick-slide:focus,
+.slick-arrow.slick-hidden:focus {
+  outline: none;
+}
+
+.slick-track.is_dragging {
+  cursor: grabbing;
+  transition: all 0.9s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
 @media screen and (max-width: 479px) {
   .stats__item .heading__primary {
     font-size: 17rem;
@@ -352,7 +475,7 @@ a:-webkit-any-link {
   }
 }
 
-.Testimonial-inline .icon__img {
+.testimonial-inline .icon__img {
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(255, 196, 0, 0.12), 0px 16px 24px rgba(255, 196, 0, 0.2);
 }
 
@@ -654,6 +777,34 @@ a:-webkit-any-link {
   flex-direction: row-reverse;
 }
 
+#case-studies__hero {
+  color: #fafcff;
+}
+#case-studies__hero .container.container-full-width {
+  padding: 0;
+}
+#case-studies__hero .container.container-11clm {
+  justify-content: flex-end;
+  padding: 0 0 5rem 0;
+}
+#case-studies__hero .hero-slider__content {
+  transition: all 1.2s linear;
+  opacity: 0;
+}
+
+.case-study__grid div:nth-child(5) {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+.case-study__grid div:nth-child(5) .featured-cases__item {
+  width: 100rem;
+}
+.case-study__grid div:nth-child(5) .featured-cases__item .featured-cases__content {
+  width: 42.1875rem;
+}
+
 .section.blog__hero {
   border-top-style: none;
   border-right-style: none;
@@ -918,6 +1069,31 @@ a:-webkit-any-link {
 #case-study__details .row p {
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.case-study__carousel-img {
+  border-radius: 0.35rem;
+}
+@media screen and (max-width: 991px) {
+  .case-study__carousel-img {
+    border-radius: 0.5rem;
+  }
+}
+@media screen and (max-width: 479px) {
+  .case-study__carousel-img {
+    border-radius: 2rem;
+  }
+}
+
+.carousel__caption {
+  transition: all 0.9s cubic-bezier(0.19, 1, 0.22, 1);
+  opacity: 0;
+  transform: translateY(-1rem);
+}
+
+.carousel__caption.in_view {
+  opacity: 1;
+  transform: translateY(0rem);
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -17,3 +17,18 @@
 		}
 	}
 }
+
+.case-study__carousel-img {
+	@include defaultRadius();
+}
+
+.carousel__caption {
+	transition: $lns-transition;
+	opacity: 0;
+	transform: translateY(-1rem);
+}
+
+.carousel__caption.in_view {
+	opacity: 1;
+	transform: translateY(0rem);
+}
