@@ -1,0 +1,19 @@
+// ==========================================================================
+// Case-study-temp.scss
+// ==========================================================================
+
+#case-study__details {
+	.row {
+		margin-top: $lns-space-small;
+		justify-content: start;
+		white-space: nowrap;
+		div:first-child {
+			color: $lns-brand-black;
+			margin-right: $lns-space-medium;
+		}
+		p {
+			margin-top: $lns-space-xsmall;
+			margin-bottom: $lns-space-xsmall;
+		}
+	}
+}

@@ -20,6 +20,9 @@
 	.full-img {
 		@include defaultRadius();
 	}
+	.featured-testimonial__img {
+		box-shadow: $lns-shadow-dark;
+	}
 	.featured-testimonial__credit {
 		box-shadow: $lns-shadow-dark;
 		.icon__img {
@@ -28,10 +31,10 @@
 		}
 		p {
 			opacity: 0.5;
+			margin: 0;
 		}
-		.p-large {
+		p:first-child {
 			margin-top: 0.5rem;
-			margin-bottom: 0;
 			opacity: 1;
 		}
 	}
