@@ -1,0 +1,53 @@
+// ==========================================================================
+// Blog.scss
+// ==========================================================================
+
+.section.blog__hero {
+	@include defaultBorders($bottom: solid);
+	h2 {
+		margin-bottom: $lns-space-xsmall;
+	}
+	.arrow-link {
+		margin-top: 2rem;
+	}
+	.blog-hero__featured-img {
+		box-shadow: $lns-shadow-default;
+		@include defaultRadius();
+		overflow: hidden;
+	}
+}
+
+.blog__grid {
+	.post__item {
+		img {
+			@include defaultRadius();
+			width: 100%;
+			height: 18rem;
+			object-fit: cover;
+			@media screen and (max-width: $lns-breakpoint-mobile) {
+				height: 72.5rem;
+			}
+		}
+		.heading__dark {
+			margin-top: $lns-space-xsmall;
+			margin-bottom: $lns-space-xsmall;
+			@media screen and (max-width: $lns-breakpoint-mobile) {
+				margin-top: $lns-space-large;
+				margin-bottom: $lns-space-small;
+			}
+		}
+	}
+	.row {
+		margin-top: (0.65 * $lns-space-large);
+		@media screen and (max-width: $lns-breakpoint-mobile) {
+			margin-top: $lns-space-xxlarge;
+		}
+	}
+}
+
+.pagination {
+	.row {
+		margin-top: $lns-space-small;
+		margin-bottom: $lns-space-small;
+	}
+}

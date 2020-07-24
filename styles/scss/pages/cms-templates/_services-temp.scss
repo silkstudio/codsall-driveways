@@ -1,0 +1,89 @@
+// ==========================================================================
+// Services-temp.scss
+// ==========================================================================
+
+.section.inset-inner__hero {
+	.container.container-12clm {
+		padding-bottom: 0;
+	}
+}
+
+.inset-inner__hero-img {
+	@include defaultRadius();
+}
+
+.services-temp__benefit {
+	.heading__primary {
+		white-space: nowrap;
+		margin-bottom: $lns-space-xsmall;
+	}
+}
+
+// Additional gallery classes
+
+.services-temp__gallery div:nth-child(1) {
+	grid-column-start: 1;
+	grid-column-end: 3;
+	grid-row-start: 1;
+	grid-row-end: 1;
+}
+
+.services-temp__gallery div:nth-last-child(1) {
+	grid-column-start: 2;
+	grid-column-end: 4;
+	grid-row-start: 3;
+	grid-row-end: 3;
+}
+
+.banner {
+	box-shadow: $lns-shadow-default;
+	position: relative;
+	z-index: 5;
+	.testimonial__banner {
+		.row {
+			justify-content: start;
+			margin-top: $lns-space-small;
+			padding-top: $lns-space-small;
+			@include defaultBorders($top: solid);
+			p:first-child {
+				color: $lns-brand-black;
+				line-height: 100%;
+				margin-top: 0;
+				margin-bottom: 0;
+			}
+		}
+		.icon__img {
+			margin-right: $lns-space-small;
+			box-shadow: $lns-shadow-yellow;
+		}
+	}
+}
+
+.tech-benefits__grid {
+	h4 {
+		color: $lns-brand-black;
+	}
+	.row {
+		justify-content: start;
+		margin-bottom: 0.5 * $lns-space-small;
+		.icon__img {
+			box-shadow: $lns-shadow-yellow;
+			margin-right: 0.5 * $lns-space-small;
+		}
+	}
+	h6 {
+		color: $lns-brand-black;
+	}
+}
+
+.section.footer__reviews {
+	margin-bottom: -5rem;
+	text-align: center;
+	.container.container-11clm {
+		padding: 0;
+	}
+	.banner {
+		transform: translate(0, 50%);
+		padding: 3.75rem 10rem;
+	}
+}

@@ -13,6 +13,7 @@
 		}
 	}
 	.p-small {
+		opacity: .75;
 		@media screen and (max-width: $lns-breakpoint-tablet-max) {
 			white-space: nowrap;
 		}
@@ -108,6 +109,9 @@
 		.icon__img {
 			box-shadow: $lns-shadow-yellow;
 		}
+		.p-small {
+			opacity: .75;
+		}
 	}
 }
 
@@ -145,12 +149,11 @@
 	}
 	.post__item {
 		img {
-			border-radius: $lns-radius-desktop;
+			@include defaultRadius();
 			width: 100%;
 			height: 18rem;
 			object-fit: cover;
 			@media screen and (max-width: $lns-breakpoint-mobile) {
-				border-radius: $lns-radius-mobile;
 				height: 72.5rem;
 			}
 		}

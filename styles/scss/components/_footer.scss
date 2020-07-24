@@ -87,6 +87,7 @@
 
 // Bookend
 .footer__bookend {
+	@include defaultBorders(hsla(220, 1, 99, .15), $top: solid);
 	margin-top: $lns-space-small;
 	@media screen and (max-width: $lns-breakpoint-mobile) {
 		margin-top: $lns-space-xlarge;

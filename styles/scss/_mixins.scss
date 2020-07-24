@@ -1,0 +1,30 @@
+// ==========================================================================
+// Mixins.scss
+// ==========================================================================
+
+// Set consistantlly styled borders on all devices
+@mixin defaultBorders($color: $lns-brand-secondary--light, $top: none, $right: none, $bottom: none, $left: none) {
+	border-top-style: $top;
+	border-right-style: $right;
+	border-bottom-style: $bottom;
+	border-left-style: $left;
+	border-width: $lns-border-desktop;
+	border-color: $color;
+	@media screen and (max-width: $lns-breakpoint-tablet-max) {
+		border-width: $lns-border-tablet;
+	}
+	@media screen and (max-width: $lns-breakpoint-mobile) {
+		border-width: $lns-border-mobile;
+	}
+}
+
+// Set consistantlly styled radius's on all devices
+@mixin defaultRadius() {
+	border-radius: $lns-radius-desktop;
+	@media screen and (max-width: $lns-breakpoint-tablet-max) {
+		border-radius: $lns-radius-tablet;
+	}
+	@media screen and (max-width: $lns-breakpoint-mobile) {
+		border-radius: $lns-radius-mobile;
+	}
+}

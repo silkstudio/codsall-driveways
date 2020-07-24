@@ -18,7 +18,7 @@
 		margin-bottom: 0.5 * $lns-space-small;
 	}
 	.full-img {
-		@extend .default-rad;
+		@include defaultRadius();
 	}
 	.featured-testimonial__credit {
 		box-shadow: $lns-shadow-dark;
@@ -64,7 +64,7 @@
 
 .suggested-case {
 	.full-img {
-		@extend .default-rad;
+		@include defaultRadius();
 		width: 43.5rem;
 		height: 34.75rem;
 	}

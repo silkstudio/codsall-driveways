@@ -1,0 +1,56 @@
+// ==========================================================================
+// Blog-temp.scss
+// ==========================================================================
+
+#blog-post-hero {
+	text-align: center;
+	.row {
+		justify-content: center;
+		p:nth-child(2) {
+			opacity: .75;
+			margin-left: 0.5 * $lns-space-xsmall;
+		}
+	}
+	.row:nth-of-type(1) {
+		margin-top: $lns-space-small;
+		margin-bottom: $lns-space-small;
+	}
+	.social-icon {
+		opacity: 1;
+		margin: 0rem .75rem;
+		&:hover {
+			opacity: .5;
+		}
+	}
+}
+
+.section.blog__post {
+	@include defaultBorders($bottom: solid);
+	.blog-post__content {
+		p + figure {
+			padding: 0rem 9rem 5rem 9rem;
+		}
+		figure + p {
+			padding: 5rem 9rem 0rem 9rem;
+		}
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		blockquote,
+		p {
+			padding: 0 9rem;
+		}
+		figcaption {
+			font-style: italic;
+			margin-top: $lns-space-xsmall;
+		}
+	}
+}
+
+.styled-blog-img {
+	object-fit: cover;
+	height: 34rem;
+}

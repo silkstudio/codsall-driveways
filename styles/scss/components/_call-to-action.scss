@@ -7,3 +7,10 @@
 		margin-top: $lns-space-small;
 	}
 }
+
+.section.cta__section--alt {
+	.container.container-12clm {
+		@include defaultBorders(hsla(216, 100%, 99%, 0.5), $bottom: solid);
+		padding: 0;
+	}
+}

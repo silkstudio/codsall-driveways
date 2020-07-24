@@ -33,6 +33,7 @@ $lns-colour-white: hsla(230, 7%, 100%, 1);
 $lns-brand-primary: hsla(46, 100%, 50%, 1);
 $lns-brand-primary--light: hsla(45, 100%, 94%, 1);
 $lns-brand-secondary: hsla(0, 0%, 70%, 1);
+$lns-brand-secondary--light: hsla(0, 0%, 70%, .2);
 $lns-brand-white: hsla(220, 100%, 99%, 1);
 $lns-brand-black: hsla(160, 5%, 13%, 1);
 $lns-brand-offwhite: hsla(220, 20%, 97%, 1);
@@ -50,15 +51,11 @@ $lns-shadow-yellow: 0px 0px 1px hsla(0, 0%, 0%, 0.04), 0px 2px 6px hsla(46, 100%
 $lns-radius-desktop: .35rem;
 $lns-radius-tablet: .5rem;
 $lns-radius-mobile: 2rem;
-.default-rad {
-	border-radius: $lns-radius-desktop;
-	@media screen and (max-width: $lns-breakpoint-tablet-max) {
-		border-radius: $lns-radius-tablet;
-	}
-	@media screen and (max-width: $lns-breakpoint-mobile) {
-		border-radius: $lns-radius-mobile;
-	}
-}
+
+// Borders
+$lns-border-desktop: 0.1rem;
+$lns-border-tablet: 0.25rem;
+$lns-border-mobile: 0.5rem;
 
 // Spaces
 $lns-space-xsmall: 1rem;

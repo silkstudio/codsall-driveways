@@ -22,14 +22,15 @@ const transitionElement = document.querySelector('.main');
 const setTransitioninInitState = () => {
 	transitionElement.classList.remove('main__in-view');
 	transitionElement.style.display = 'none';
-	console.log('initial state set, loading...');
+	console.log('Initial state complete, loading...');
 };
 
 const linkClasses = [
 	'nav-link',
 	'arrow-link',
 	'site__logo',
-	'footer__link'
+	'footer__link',
+	'btn'
 ];
 
 const delay = (URL) => {
@@ -51,26 +52,16 @@ document.addEventListener('click', function(event) {
 	if (checkClasses(event.target)) {
 		event.preventDefault();
 		delay(event.target.href);
-		console.log('target');
+		// console.log('target');
 	} else if (checkClasses(event.target.parentNode)) {
 		event.preventDefault();
 		delay(event.target.parentNode.href);
-		console.log('parent');
+		// console.log('parent');
 	} else {
 		return;
 	}
 });
 
-/*
-
-
-
-
-
-
-
-
-*/
 // Mobile menu sizing
 let intViewportWidth = window.innerWidth;
 let intViewportHeight = window.innerHeight;
@@ -79,16 +70,6 @@ let intViewportHeight = window.innerHeight;
 const editorStyles = document.getElementById('editor-styles');
 let isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-/*
-
-
-
-
-
-
-
-
-*/
 // Initialise page
 pageSetup = () => {
 	transitionElement.style.display = 'block';
@@ -99,7 +80,7 @@ pageSetup = () => {
 	if (!isMobile && intViewportWidth >= 992) {
 		luxy.init({
 			wrapper      : '#luxy',
-			wrapperSpeed : 1
+			wrapperSpeed : 0.1
 		});
 	}
 	console.log('App loaded.');
