@@ -25,18 +25,29 @@ const fcScrollList = document.querySelector('.featured-cases__list');
 const fcScrollContent = document.getElementById('fc__scroll');
 const fcScrollArrwLeft = document.getElementById('fc-arrow--left');
 const fcScrollArrwRight = document.getElementById('fc-arrow--right');
-let fcChildren = fcScrollList.children;
-let cw = fcChildren.item(0).clientWidth;
-let translateX_Val = 1;
+let fcChildren;
+let cw;
+let translateX_Val;
 let stepCount;
-let updatedNextVal = 776;
-let updatedPrevVal = 0;
-let fcScrollMax = cw * (fcChildren.length - 2);
+let updatedNextVal;
+let updatedPrevVal;
+let fcScrollMax;
 
 //
+// Init variables
+window.onload = () => {
+	fcChildren = fcScrollList.children;
+	cw = fcChildren.item(0).clientWidth;
+	translateX_Val = 1;
+	stepCount;
+	updatedNextVal = cw;
+	updatedPrevVal = 0;
+	fcScrollMax = cw * (fcChildren.length - 2);
+};
+
 // Recalculate metrics if the window is resized
 const recalcMetrics = () => {
-	let cw = fcChildren.item(0).clientWidth;
+	cw = fcChildren.item(0).clientWidth;
 };
 window.onresize = setTimeout(recalcMetrics, 1000);
 
@@ -61,7 +72,10 @@ const setTranslateValue = () => {
 	stepCount = Math.floor(translateX_Val / cw);
 	// Set the new next and previous values
 	updatedNextVal = stepCount * cw + cw;
+	console.log(`after drag, the updated next value is ${updatedNextVal}`);
 	updatedPrevVal = stepCount * cw;
+	console.log(`after drag, the updated prev value is ${updatedPrevVal}`);
+
 	// If user has reached the end, stop them from scrolling any further
 	if (updatedNextVal >= fcScrollMax) {
 		updatedNextVal = fcScrollMax;
@@ -126,15 +140,15 @@ fcScrollContent.onmouseup = () => {
 };
 
 //
-// Touch interactions
-fcScrollArrwRight.addEventListener('touchstart', fcScrollRight);
-fcScrollArrwRight.addEventListener('touchstart', fcScrollLeft);
+// // Touch interactions
+// fcScrollArrwRight.addEventListener('touchstart', fcScrollRight);
+// fcScrollArrwRight.addEventListener('touchstart', fcScrollLeft);
 
-fcScrollContent.ontouchstart = () => {
-	//Fallback in case mouse leaves the viewport before releasing click
-	setTimeout(setTranslateValue, 900);
-};
+// fcScrollContent.ontouchstart = () => {
+// 	//Fallback in case mouse leaves the viewport before releasing click
+// 	setTimeout(setTranslateValue, 900);
+// };
 
-fcScrollContent.ontouchend = () => {
-	setTimeout(setTranslateValue, 1000);
-};
+// fcScrollContent.ontouchend = () => {
+// 	setTimeout(setTranslateValue, 1000);
+// };
