@@ -80,7 +80,7 @@ pageSetup = () => {
 	if (!isMobile && intViewportWidth >= 992) {
 		luxy.init({
 			wrapper      : '#luxy',
-			wrapperSpeed : 0.1
+			wrapperSpeed : 0.85
 		});
 	}
 	console.log('App loaded.');

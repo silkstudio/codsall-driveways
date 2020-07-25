@@ -15,19 +15,20 @@
 // ==========================================================================
 // CaseStudies.js
 // ==========================================================================
+
+// Define variables
 const heroSliderContent = document.querySelectorAll('.hero-slider__content');
 const heroNavNext = document.getElementById('cs-hero-nav__next');
 const heroNavPrev = document.getElementById('cs-hero-nav__prev');
 
 //
 //Check page number to see if the page needs to be scrolled
-let pageNumber = document.URL.split(/(page=)/);
+const pageNumber = document.URL.split(/(page=)/);
 const checkPageNumber = () => {
 	if (parseInt(pageNumber[2]) > 1) {
 		window.scroll(0, window.innerHeight);
 	}
 };
-checkPageNumber();
 
 //
 // Slick slider
@@ -67,3 +68,11 @@ $('.case-studies__hero-slider').on('beforeChange', function(event, slick, curren
 		heroSliderContent[nextSlide].style.opacity = '0';
 	}, 8000);
 });
+//
+//
+//
+//
+//
+//
+// Init function
+window.onload = checkPageNumber();
