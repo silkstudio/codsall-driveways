@@ -35,14 +35,20 @@ let fcScrollMax;
 
 //
 // Init variables
-window.onload = () => {
+
+const clickDragInit = () => {
 	fcChildren = fcScrollList.children;
 	cw = fcChildren.item(0).clientWidth;
 	translateX_Val = 1;
-	stepCount;
 	updatedNextVal = cw;
 	updatedPrevVal = 0;
 	fcScrollMax = cw * (fcChildren.length - 2);
+	console.log(`variables initiated, as follows: 
+	fcChildren: 	${fcChildren}
+	cw: 			${cw}
+	updatedNextVal: ${updatedNextVal}
+	fcScrollMax: 	${fcScrollMax}
+	`);
 };
 
 // Recalculate metrics if the window is resized
@@ -72,9 +78,9 @@ const setTranslateValue = () => {
 	stepCount = Math.floor(translateX_Val / cw);
 	// Set the new next and previous values
 	updatedNextVal = stepCount * cw + cw;
-	console.log(`after drag, the updated next value is ${updatedNextVal}`);
+	// console.log(`after drag, the updated next value is ${updatedNextVal}`);
 	updatedPrevVal = stepCount * cw;
-	console.log(`after drag, the updated prev value is ${updatedPrevVal}`);
+	// console.log(`after drag, the updated prev value is ${updatedPrevVal}`);
 
 	// If user has reached the end, stop them from scrolling any further
 	if (updatedNextVal >= fcScrollMax) {
@@ -152,3 +158,19 @@ fcScrollContent.ontouchstart = () => {
 fcScrollContent.ontouchend = () => {
 	setTimeout(setTranslateValue, 1000);
 };
+
+window.onload = setTimeout(clickDragInit, 500);
+
+//
+//
+// FORM FIELDS - LOACL STORAGE //
+
+//
+// Hero form field
+let emailVal;
+const heroSubmit = document.getElementById('hero-submit');
+
+heroSubmit.addEventListener('click', () => {
+	emailVal = document.getElementById('hero-email').value;
+	window.localStorage.setItem('email', emailVal);
+});

@@ -630,28 +630,10 @@ a:-webkit-any-link {
   }
 }
 
-/*
+#contact__section {
+  padding-top: 7.5rem;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-*/
 .section.about__hero .container {
   justify-content: start;
 }
@@ -677,6 +659,24 @@ a:-webkit-any-link {
 }
 .tick-list p {
   margin: 0;
+}
+
+.standard-tab.active-tab {
+  border-top-color: #fafcff;
+  opacity: 1;
+}
+
+.process__slide.is-active {
+  z-index: 999;
+  opacity: 1;
+}
+
+.test-slide {
+  transition: all 0.9s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.test-slide.active {
+  background-color: red;
 }
 
 .section.services__hero h1 {
@@ -1094,6 +1094,13 @@ a:-webkit-any-link {
 .carousel__caption.in_view {
   opacity: 1;
   transform: translateY(0rem);
+}
+
+.info-page__section .container.container-8clm {
+  margin: 0 auto 0 0;
+}
+.info-page__section .container.container-8clm .heading__dark {
+  margin-bottom: 1rem;
 }
 
 /*# sourceMappingURL=main.css.map */

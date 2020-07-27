@@ -48,7 +48,7 @@ $(document).ready(function() {
 $('.case-study__carousel').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
 	setTimeout(() => {
 		captions[currentSlide].classList.toggle('in_view');
-	}, 450);
+	}, 50);
 	setTimeout(() => {
 		captions[nextSlide].classList.toggle('in_view');
 	}, 1500);

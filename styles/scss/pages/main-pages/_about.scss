@@ -34,3 +34,21 @@
 		margin: 0;
 	}
 }
+
+.standard-tab.active-tab {
+	border-top-color: $lns-brand-white;
+	opacity: 1;
+}
+
+.process__slide.is-active {
+	z-index: 999;
+	opacity: 1;
+}
+
+.test-slide {
+	transition: $lns-transition;
+}
+
+.test-slide.active {
+	background-color: red;
+}

@@ -19,7 +19,7 @@
 // Page transition
 const transitionElement = document.querySelector('.main');
 
-const setTransitioninInitState = () => {
+const setTransitionInitState = () => {
 	transitionElement.classList.remove('main__in-view');
 	transitionElement.style.display = 'none';
 	console.log('Initial state complete, loading...');
@@ -62,6 +62,14 @@ document.addEventListener('click', function(event) {
 	}
 });
 
+// Footer form field
+const footerSubmit = document.getElementById('footer-submit');
+
+footerSubmit.addEventListener('click', () => {
+	emailVal = document.getElementById('footer-email').value;
+	window.localStorage.setItem('email', emailVal);
+});
+
 // Mobile menu sizing
 let intViewportWidth = window.innerWidth;
 let intViewportHeight = window.innerHeight;
@@ -76,7 +84,7 @@ pageSetup = () => {
 	//editorStyles.parentNode.removeChild(editorStyles);
 	//mobileNav.style.height = `${intViewportHeight}px`;
 	//mobileNav.style.width = `${intViewportWidth}px`;
-	//quicklink.listen();
+	quicklink.listen();
 	if (!isMobile && intViewportWidth >= 992) {
 		luxy.init({
 			wrapper      : '#luxy',
@@ -87,9 +95,5 @@ pageSetup = () => {
 	transitionElement.classList.add('main__in-view');
 };
 
-async function init() {
-	setTransitioninInitState();
-	await setTimeout(pageSetup, 1);
-}
-
-window.onloadstart = init();
+window.onloadstart = setTransitionInitState();
+window.onload = setTimeout(pageSetup, 500);

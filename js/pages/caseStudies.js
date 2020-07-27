@@ -20,15 +20,21 @@
 const heroSliderContent = document.querySelectorAll('.hero-slider__content');
 const heroNavNext = document.getElementById('cs-hero-nav__next');
 const heroNavPrev = document.getElementById('cs-hero-nav__prev');
+let splitURL;
+let pageNumber;
+let curScroll;
 
 //
 //Check page number to see if the page needs to be scrolled
-const pageNumber = document.URL.split(/(page=)/);
-const checkPageNumber = () => {
-	if (parseInt(pageNumber[2]) > 1) {
+function checkPageNumber() {
+	splitURL = document.URL.split(/(page=)/);
+	pageNumber = parseInt(splitURL[2]);
+	curScroll = window.scrollY;
+	if (pageNumber > 1 && curScroll <= 50) {
 		window.scroll(0, window.innerHeight);
+		console.log(`checked numbers, current page number is: ${parseInt(pageNumber)}`);
 	}
-};
+}
 
 //
 // Slick slider
@@ -75,4 +81,4 @@ $('.case-studies__hero-slider').on('beforeChange', function(event, slick, curren
 //
 //
 // Init function
-window.onload = checkPageNumber();
+window.onload = setTimeout(checkPageNumber, 1000);
