@@ -78,9 +78,9 @@ const setTranslateValue = () => {
 	stepCount = Math.floor(translateX_Val / cw);
 	// Set the new next and previous values
 	updatedNextVal = stepCount * cw + cw;
-	console.log(`after drag, the updated next value is ${updatedNextVal}`);
+	// console.log(`after drag, the updated next value is ${updatedNextVal}`);
 	updatedPrevVal = stepCount * cw;
-	console.log(`after drag, the updated prev value is ${updatedPrevVal}`);
+	// console.log(`after drag, the updated prev value is ${updatedPrevVal}`);
 
 	// If user has reached the end, stop them from scrolling any further
 	if (updatedNextVal >= fcScrollMax) {

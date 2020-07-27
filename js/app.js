@@ -65,10 +65,12 @@ document.addEventListener('click', function(event) {
 // Footer form field
 const footerSubmit = document.getElementById('footer-submit');
 
-footerSubmit.addEventListener('click', () => {
-	emailVal = document.getElementById('footer-email').value;
-	window.localStorage.setItem('email', emailVal);
-});
+if (footerSubmit !== null) {
+	footerSubmit.addEventListener('click', () => {
+		emailVal = document.getElementById('footer-email').value;
+		window.localStorage.setItem('email', emailVal);
+	});
+}
 
 // Mobile menu sizing
 let intViewportWidth = window.innerWidth;
