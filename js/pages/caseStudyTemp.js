@@ -21,6 +21,7 @@
 let captions = document.querySelectorAll('.carousel__caption');
 const carouselNext = document.getElementById('carousel_next');
 const carouselPrev = document.getElementById('carousel_prev');
+const scrollPrompt = document.getElementById('cs__scroll-prompt');
 let slickTrack;
 
 $(document).ready(function() {
@@ -29,6 +30,7 @@ $(document).ready(function() {
 		adaptiveHeight : false,
 		slidesToShow   : 1,
 		slidesToScroll : 2,
+		initialSlide   : 0,
 		centerMode     : true,
 		variableWidth  : true,
 		speed          : 1500,
@@ -39,6 +41,9 @@ $(document).ready(function() {
 		prevArrow      : carouselPrev
 	});
 	captions[0].classList.toggle('in_view');
+	if (isMobile && intViewportWidth <= 991) {
+		carouselNext.click();
+	}
 	setMouse();
 });
 
@@ -56,7 +61,7 @@ $('.case-study__carousel').on('beforeChange', function(event, slick, currentSlid
 
 //
 // Functions
-const updateCaptions = () => {
+const setCaptions = () => {
 	for (let i = 0; i < captions.length; i++) {
 		let content = captions[i].previousSibling.alt;
 		captions[i].innerHTML = content;
@@ -79,4 +84,8 @@ const setMouse = () => {
 	);
 };
 
-updateCaptions();
+scrollPrompt.addEventListener('click', () => {
+	window.scroll({ top: 0.75 * window.innerHeight, left: 0, behavior: 'smooth' });
+});
+
+setCaptions();

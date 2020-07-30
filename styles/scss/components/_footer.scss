@@ -10,6 +10,7 @@
 	.site__logo {
 		@media screen and (min-width: $lns-breakpoint-tablet-min) {
 			transform: translate(0, -50%);
+			margin-bottom: -3rem;
 		}
 		@media screen and (max-width: $lns-breakpoint-mobile) {
 			margin-top: $lns-space-large;
@@ -25,6 +26,9 @@
 			}
 			&:first-child {
 				margin-bottom: (1.5 * $lns-space-xsmall);
+				@media screen and (max-width: $lns-breakpoint-tablet-max) {
+					margin-bottom: $lns-space-small;
+				}
 				@media screen and (max-width: $lns-breakpoint-mobile) {
 					margin-bottom: (.75 * $lns-space-large);
 				}
@@ -55,15 +59,22 @@
 			margin-bottom: $lns-space-xsmall;
 			opacity: .5;
 			transition: $lns-transition;
+			@media screen and (max-width: $lns-breakpoint-tablet-max) {
+				font-size: 2rem;
+			}
 			@media screen and (max-width: $lns-breakpoint-mobile) {
 				margin-bottom: $lns-space-small;
 				opacity: .75;
+				font-size: 5.25rem;
 			}
 			&:hover {
 				opacity: 1;
 			}
 		}
 		&:first-child {
+			@media screen and (min-width: $lns-breakpoint-tablet-min) and (max-width: $lns-breakpoint-tablet-max) {
+				padding-left: $lns-space-small;
+			}
 			@media screen and (max-width: $lns-breakpoint-mobile) {
 				.footer__contact-info,
 				.social-icon {
@@ -89,12 +100,18 @@
 .footer__bookend {
 	@include defaultBorders(hsla(220, 1, 99, .15), $top: solid);
 	margin-top: $lns-space-small;
+	@media screen and (max-width: $lns-breakpoint-tablet-max) {
+		margin-top: $lns-space-medium;
+	}
 	@media screen and (max-width: $lns-breakpoint-mobile) {
 		margin-top: $lns-space-xlarge;
 	}
 	p {
 		font-size: 0.875rem;
 		opacity: .5;
+		@media screen and (max-width: $lns-breakpoint-tablet-max) {
+			font-size: 1.5rem;
+		}
 		@media screen and (max-width: $lns-breakpoint-mobile) {
 			font-size: 4rem;
 		}

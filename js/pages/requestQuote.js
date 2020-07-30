@@ -37,44 +37,43 @@ const raqBackFour = document.getElementById('raq-back-4');
 
 // Close button
 const raqClose = document.getElementById('raq-close');
+
+// Email field
 const raqEmail = document.getElementById('raq-email');
 
+//
 // Forward event listeners
 raqFwdOne.addEventListener('click', () => {
 	raqLinkTwo.click();
 });
-
 raqFwdTwo.addEventListener('click', () => {
 	raqLinkThree.click();
 });
-
 raqFwdThree.addEventListener('click', () => {
 	raqLinkFour.click();
 });
-
 raqFwdFour.addEventListener('click', () => {
 	raqLinkFive.click();
 });
 
+//
 // Backward event listeners
 raqBackOne.addEventListener('click', () => {
 	raqLinkOne.click();
 });
-
 raqBackTwo.addEventListener('click', () => {
 	raqLinkTwo.click();
 });
-
 raqBackThree.addEventListener('click', () => {
 	raqLinkThree.click();
 });
-
 raqBackFour.addEventListener('click', () => {
 	raqLinkFour.click();
 });
-
 raqClose.addEventListener('click', () => {
 	window.history.back();
 });
 
+//
+// Insert stored email value
 raqEmail.value = localStorage.getItem('email');

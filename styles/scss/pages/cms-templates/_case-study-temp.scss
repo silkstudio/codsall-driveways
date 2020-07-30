@@ -2,18 +2,48 @@
 // Case-study-temp.scss
 // ==========================================================================
 
-#case-study__details {
-	.row {
-		margin-top: $lns-space-small;
-		justify-content: start;
-		white-space: nowrap;
-		div:first-child {
-			color: $lns-brand-black;
-			margin-right: $lns-space-medium;
+.section.inset-inner__hero {
+	.col__6 {
+		@media screen and (max-width: $lns-breakpoint-tablet-max) {
+			width: 80rem;
 		}
-		p {
-			margin-top: $lns-space-xsmall;
-			margin-bottom: $lns-space-xsmall;
+		@media screen and (max-width: $lns-breakpoint-mobile) {
+			width: 105rem;
+		}
+	}
+}
+
+#case-study__details {
+	.container.container-10clm {
+		@media screen and (max-width: $lns-breakpoint-tablet-max) {
+			width: 80rem;
+		}
+		@media screen and (max-width: $lns-breakpoint-mobile) {
+			width: 105rem;
+		}
+	}
+	.col__6 {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		@media screen and (max-width: $lns-breakpoint-tablet-max) {
+			width: 80rem;
+		}
+		@media screen and (max-width: $lns-breakpoint-mobile) {
+			width: 100%;
+		}
+	}
+	.case-study__details {
+		margin-top: $lns-space-small;
+		@media screen and (max-width: $lns-breakpoint-tablet-max) {
+			margin-top: $lns-space-medium;
+			margin-bottom: -12rem;
+		}
+		@media screen and (max-width: $lns-breakpoint-mobile) {
+			margin-top: $lns-space-xlarge;
+		}
+		p:nth-child(odd) {
+			color: $lns-brand-black;
 		}
 	}
 }

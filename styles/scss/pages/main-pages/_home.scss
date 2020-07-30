@@ -87,6 +87,9 @@
 	}
 	.hr {
 		margin: $lns-space-medium auto;
+		@media screen and (max-width: $lns-breakpoint-tablet-max) {
+			margin: $lns-space-large auto;
+		}
 		@media screen and (max-width: $lns-breakpoint-mobile) {
 			margin: $lns-space-xlarge auto;
 		}
@@ -102,6 +105,10 @@
 		.heading__dark {
 			margin-top: 1.5rem;
 			margin-bottom: .5 * $lns-space-xsmall;
+			@media screen and (max-width: $lns-breakpoint-tablet-max) {
+				margin-top: $lns-space-small;
+				margin-bottom: $lns-space-xsmall;
+			}
 			@media screen and (max-width: $lns-breakpoint-mobile) {
 				margin-top: $lns-space-medium;
 			}
@@ -120,6 +127,9 @@
 .testimonial-slider {
 	h4 {
 		padding-bottom: $lns-space-medium;
+		@media screen and (max-width: $lns-breakpoint-tablet-max) {
+			padding-bottom: $lns-space-large;
+		}
 		@media screen and (max-width: $lns-breakpoint-mobile) {
 			padding-bottom: $lns-space-xlarge;
 			font-size: 7rem;
@@ -135,6 +145,9 @@
 	}
 	p {
 		opacity: .5;
+		@media screen and (max-width: $lns-breakpoint-tablet-max) {
+			margin: 0;
+		}
 	}
 }
 
@@ -143,6 +156,9 @@
 .section.posts__section {
 	.container.container-10clm {
 		padding: $lns-space-large 0;
+		@media screen and (max-width: $lns-breakpoint-tablet-max) {
+			padding: $lns-space-xlarge 0;
+		}
 		@media screen and (max-width: $lns-breakpoint-mobile) {
 			padding: $lns-space-xxlarge 0;
 		}
@@ -153,13 +169,19 @@
 			width: 100%;
 			height: 18rem;
 			object-fit: cover;
+			@media screen and (max-width: $lns-breakpoint-tablet-max) {
+				height: 21rem;
+			}
 			@media screen and (max-width: $lns-breakpoint-mobile) {
-				height: 72.5rem;
+				height: 80rem;
 			}
 		}
 		.heading__dark {
 			margin-top: $lns-space-xsmall;
 			margin-bottom: $lns-space-xsmall;
+			@media screen and (max-width: $lns-breakpoint-tablet-max) {
+				margin-top: $lns-space-small;
+			}
 			@media screen and (max-width: $lns-breakpoint-mobile) {
 				margin-top: $lns-space-large;
 				margin-bottom: $lns-space-small;
@@ -168,6 +190,9 @@
 	}
 	.row {
 		margin-top: (0.65 * $lns-space-large);
+		@media screen and (max-width: $lns-breakpoint-tablet-max) {
+			margin-top: $lns-space-large;
+		}
 		@media screen and (max-width: $lns-breakpoint-mobile) {
 			margin-top: $lns-space-xxlarge;
 		}

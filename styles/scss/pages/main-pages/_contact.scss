@@ -1,0 +1,32 @@
+// ==========================================================================
+// Contact.scss
+// ==========================================================================
+
+#contact__section {
+	@media screen and (max-width: $lns-breakpoint-mobile) {
+		padding: 25rem 0 10rem 0;
+	}
+}
+
+.contact-block {
+	p {
+		@media screen and (max-width: $lns-breakpoint-tablet-max) {
+			font-size: 1.75rem;
+		}
+		@media screen and (max-width: $lns-breakpoint-mobile) {
+			font-size: 4.25rem;
+		}
+	}
+	.heading__dark {
+		@media screen and (max-width: $lns-breakpoint-mobile) {
+			margin-bottom: $lns-space-small;
+		}
+	}
+}
+
+#contact__submit-btn {
+	align-self: flex-start;
+	@media screen and (max-width: $lns-breakpoint-mobile) {
+		align-self: stretch;
+	}
+}

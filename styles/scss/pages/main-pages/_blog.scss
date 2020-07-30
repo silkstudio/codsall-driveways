@@ -6,14 +6,28 @@
 	@include defaultBorders($bottom: solid);
 	h2 {
 		margin-bottom: $lns-space-xsmall;
+		@media screen and (max-width: $lns-breakpoint-mobile) {
+			margin-bottom: $lns-space-small;
+		}
 	}
 	.arrow-link {
 		margin-top: 2rem;
+		@media screen and (max-width: $lns-breakpoint-tablet-max) {
+			margin-top: $lns-space-small;
+		}
+		@media screen and (max-width: $lns-breakpoint-mobile) {
+			margin-top: 0.75 * $lns-space-large;
+		}
 	}
 	.blog-hero__featured-img {
 		box-shadow: $lns-shadow-default;
 		@include defaultRadius();
 		overflow: hidden;
+	}
+	.flex-row {
+		@media screen and (max-width: $lns-breakpoint-mobile) {
+			flex-direction: column-reverse;
+		}
 	}
 }
 
@@ -24,16 +38,23 @@
 			width: 100%;
 			height: 18rem;
 			object-fit: cover;
+			@media screen and (max-width: $lns-breakpoint-tablet-max) {
+				height: 22rem;
+			}
 			@media screen and (max-width: $lns-breakpoint-mobile) {
-				height: 72.5rem;
+				height: 80rem;
 			}
 		}
 		.heading__dark {
 			margin-top: $lns-space-xsmall;
 			margin-bottom: $lns-space-xsmall;
+			@media screen and (max-width: $lns-breakpoint-tablet-max) {
+				margin-top: $lns-space-small;
+				font-size: 2.53125rem;
+			}
 			@media screen and (max-width: $lns-breakpoint-mobile) {
-				margin-top: $lns-space-large;
-				margin-bottom: $lns-space-small;
+				margin-top: $lns-space-medium;
+				font-size: 8.32rem;
 			}
 		}
 	}
@@ -47,7 +68,11 @@
 
 .pagination {
 	.row {
-		margin-top: $lns-space-small;
-		margin-bottom: $lns-space-small;
+		margin-top: $lns-space-xsmall;
+		margin-bottom: $lns-space-xsmall;
+		@media screen and (max-width: $lns-breakpoint-mobile) {
+			margin-top: $lns-space-medium;
+			margin-bottom: $lns-space-medium;
+		}
 	}
 }

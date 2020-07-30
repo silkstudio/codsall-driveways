@@ -18,41 +18,70 @@
 
 // PROCESS SLIDER (jQuery) //
 
-// var Webflow = Webflow || [];
-// Webflow.push(function() {
-// 	var tabTimeout;
-// 	clearTimeout(tabTimeout);
-// 	tabLoop();
-
-// 	function tabLoop() {
-// 		tabTimeout = setTimeout(function() {
-// 			var $next = $('.tabs-menu').children('.w--current:first').next();
-
-// 			if ($next.length) {
-// 				$next.click(); // user click resets timeout
-// 			} else {
-// 				$('.standard-tab:first').click();
-// 			}
-// 		}, 10000);
-// 	}
-
-// 	// Reset loop if a tab is clicked
-// 	$('.standard-tab').click(function() {
-// 		clearTimeout(tabTimeout);
-// 		tabLoop();
-// 	});
-// });
-//
-
-const processPseudoNav = document.getElementById('process__pseudo-nav').children;
-const processTabs = document.getElementById('process__tabs').children;
-
-for (let i = 0; i < processTabs.length; i++) {
-	processTabs[i].addEventListener('click', () => {
-		processPseudoNav[i].click();
-		for (let j = 0; j < processTabs.length; j++) {
-			processTabs[j].classList.remove('active-tab');
-		}
-		processTabs[i].classList.toggle('active-tab');
+// when the DOM is ready
+$(document).ready(function() {
+	// get a reference to the custom dots and store in a variable
+	const customDots = $('.standard-tab');
+	// for each custom dot
+	$.each(customDots, (index, dot) => {
+		// when the dot is clicked
+		$(dot).click(() => {
+			// remove 'active' class from the previous active dot
+			$('.active').removeClass('active');
+			// add 'active' class to current dot
+			$(dot).addClass('active');
+			// tap the equivalent native webflow dot
+			// each custom dot taps its equivalent webflow dot of the same index
+			// for instance custom dot one taps webflow dot one
+			$('.w-slider-dot:nth-child(' + (index + 1) + ')').trigger('tap');
+		});
 	});
-}
+
+	/*
+	* set up mutation observer to listen for class changes on .w-slider-dot
+	* on an autoplay slider
+	* every time a .w-slider-dot has the class .w-active
+	* add .active class to the equivalent .standard-tab
+	*/
+
+	// set up options for the observer (which mutations to observe)
+	// we are observing the 'class' attribute in this case
+	const config = {
+		attributes      : true,
+		childList       : false,
+		subtree         : false,
+		attributeFilter : [
+			'class'
+		]
+	};
+
+	// set up setObserver function
+	function setObserver(target, index) {
+		// create a new instance of the MutationObserver
+		const observer = new MutationObserver(function(mutations) {
+			// for each mutation object being observed
+			mutations.forEach(function(mutation) {
+				// check for its 'class' attribute
+				if (mutation.attributeName === 'class') {
+					// get the list of all classes
+					const classList = mutation.target.className;
+					// if the class 'w-active' exists
+					if (/w-active/.exec(classList)) {
+						// remove 'active' class from the previous active custom dot
+						$('.active').removeClass('active');
+						// add 'active' class to current custom dot of same index as the .w-slider-dot
+						$('.standard-tab:nth-child(' + (index + 1) + ')').addClass('active');
+					}
+				}
+			});
+		});
+		// call the MutationObserver on the target element
+		observer.observe(target, config);
+	}
+
+	// for each .w-slider-dot
+	$('.w-slider-dot').each(function(index, dot) {
+		// call the setObserver function to run the MutationObserver
+		setObserver(dot, index);
+	});
+});

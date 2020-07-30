@@ -66,35 +66,44 @@ $lns-space-xlarge: 15rem;
 $lns-space-xxlarge: 25rem;
 
 /*
+// Font Sizes
+
+// --desktop
+h1 { font-size: 4.5rem; line-height: 130%; }
+h2 { font-size: 3.75rem; line-height: 130%; }
+h3 { font-size: 3.125rem; line-height: 130%; }
+h4 { font-size: 2.5rem; line-height: 150%; }
+h5 { font-size: 2.0625rem; line-height: 150%; }
+h6 { font-size: 1.6875rem; line-height: 150%; }
+.hs { font-size: 0.875rem; line-height: 500%; }
+.p-large { font-size: 1.335rem; line-height: 175%; }
+.p { font-size: 1.2rem; line-height: 180%; }
+.p-small { font-size: 1.05rem; line-height: 180%; }
 
 
+// --tablet
+h1 { font-size: 6.75rem; line-height: 130%; }
+h2 { font-size: 5.625rem; line-height: 130%; }
+h3 { font-size: 4.6875rem; line-height: 130%; }
+h4 { font-size: 3.75rem; line-height: 150%; }
+h5 { font-size: 3.09375rem; line-height: 150%; }
+h6 { font-size: 2.53125rem; line-height: 150%; }
+.hs { font-size: 1.35rem; line-height: 500%; }
+.p-large { font-size: 2.5rem; line-height: 175%; }
+.p { font-size: 2rem; line-height: 180%; }
+.p-small { font-size: 1.75rem; line-height: 180%; }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// --mobile
+h1 { font-size: 13.35rem; line-height: 150%; }
+h2 { font-size: 11.85rem; line-height: 150%; }
+h3 { font-size: 10.54rem; line-height: 150%; }
+h4 { font-size: 9.37rem; line-height: 150%; }
+h5 { font-size: 8.32rem; line-height: 150%; }
+h6 { font-size: 7.41rem; line-height: 150%; }
+.hs { font-size: 4rem; line-height: 500%; }
+.p-large { font-size: 5.25rem; line-height: 175%; }
+.p { font-size: 4.75rem; line-height: 180%; }
+.p-small { font-size: 4.25rem; line-height: 190%; }
 
 */
-$lns-fontSize-small: calc(1.5 * var($lns-unit));
-$lns-fontSize-medium: calc(1.75 * var($lns-unit));
-$lns-fontSize-large: calc(2.25 * var($lns-unit));
-$lns-fontSize-xlarge: calc(2.8 * var($lns-unit));
-$lns-fontSize-xxlarge: calc(4 * var($lns-unit));

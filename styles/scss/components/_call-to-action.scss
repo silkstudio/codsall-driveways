@@ -3,8 +3,16 @@
 // ==========================================================================
 
 .section.cta__section {
+	h1 {
+		@media screen and (max-width: $lns-breakpoint-mobile) {
+			font-size: 11.85rem;
+		}
+	}
 	.cta__form {
 		margin-top: $lns-space-small;
+		@media screen and (max-width: $lns-breakpoint-tablet-max) {
+			margin-top: $lns-space-medium;
+		}
 	}
 }
 
@@ -12,5 +20,20 @@
 	.container.container-12clm {
 		@include defaultBorders(hsla(216, 100%, 99%, 0.5), $bottom: solid);
 		padding: 0;
+	}
+	.flex-row {
+		@media screen and (max-width: $lns-breakpoint-mobile) {
+			align-items: start;
+		}
+	}
+	h3 {
+		max-width: 52.375rem;
+		@media screen and (max-width: $lns-breakpoint-tablet-max) {
+			max-width: 75rem;
+		}
+		@media screen and (max-width: $lns-breakpoint-mobile) {
+			max-width: 100%;
+			margin-bottom: $lns-space-xlarge;
+		}
 	}
 }

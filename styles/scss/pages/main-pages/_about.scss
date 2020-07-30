@@ -9,6 +9,16 @@
 	h1 {
 		margin-top: 7.75rem;
 		margin-bottom: 7.75rem;
+		width: 95rem;
+		@media screen and (max-width: $lns-breakpoint-tablet-max) {
+			margin: 15rem auto;
+			width: 100rem;
+		}
+		@media screen and (max-width: $lns-breakpoint-mobile) {
+			margin: 25rem auto;
+			width: 100%;
+			font-size: 9.37rem;
+		}
 	}
 	.about-hero__img {
 		box-shadow: $lns-shadow-default;
@@ -26,29 +36,78 @@
 	}
 }
 
+#about__who-we-are {
+	.container.container-10clm {
+		@media screen and (max-width: $lns-breakpoint-tablet-max) {
+			padding-bottom: 0;
+		}
+	}
+	@media screen and (max-width: $lns-breakpoint-tablet-max) {
+		padding-top: 15rem;
+	}
+	.hr {
+		@media screen and (max-width: $lns-breakpoint-tablet-max) {
+			margin-top: 20rem;
+			margin-bottom: 5rem;
+		}
+	}
+}
+
+#about__slider {
+	@media screen and (max-width: $lns-breakpoint-mobile) {
+		margin-bottom: $lns-space-xlarge;
+	}
+	.flex-row:nth-child(2) {
+		align-items: flex-start;
+		.p-large {
+			@media screen and (max-width: $lns-breakpoint-tablet-max) {
+				font-size: 2rem;
+			}
+			@media screen and (max-width: $lns-breakpoint-mobile) {
+				font-size: 4.75rem;
+			}
+		}
+	}
+
+	.process-tabs::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+.process-slide__content {
+	p {
+		@media screen and (max-width: $lns-breakpoint-tablet-max) {
+			font-size: 1.75rem;
+		}
+		@media screen and (max-width: $lns-breakpoint-mobile) {
+			font-size: 4.25rem;
+		}
+	}
+}
+
 .tick-list {
 	li {
 		margin-top: 2 * $lns-space-xsmall;
+		@media screen and (max-width: $lns-breakpoint-tablet-max) {
+			margin-top: $lns-space-small;
+		}
+		@media screen and (max-width: $lns-breakpoint-mobile) {
+			margin-top: $lns-space-large;
+		}
 	}
 	p {
 		margin: 0;
 	}
 }
 
-.standard-tab.active-tab {
+.standard-tab.active {
 	border-top-color: $lns-brand-white;
 	opacity: 1;
 }
 
-.process__slide.is-active {
-	z-index: 999;
-	opacity: 1;
-}
-
-.test-slide {
-	transition: $lns-transition;
-}
-
-.test-slide.active {
-	background-color: red;
+.section.review__section {
+	.container.container-10clm {
+		padding-top: 5rem;
+		padding-bottom: 10rem;
+	}
 }
