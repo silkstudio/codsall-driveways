@@ -429,6 +429,9 @@ a:-webkit-any-link {
   -ms-transition: 1s -ms-filter linear;
   -o-transition: 1s -o-filter linear;
   transition: 1s filter linear, 1s -webkit-filter linear;
+}
+
+.hamburger-light {
   mix-blend-mode: difference;
 }
 
@@ -901,6 +904,7 @@ a:-webkit-any-link {
   .section.services__hero h1 {
     width: 100%;
     font-size: 10.54rem;
+    margin-bottom: 10rem;
   }
 }
 
