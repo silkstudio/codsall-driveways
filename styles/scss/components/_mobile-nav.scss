@@ -1,0 +1,28 @@
+// ==========================================================================
+// Mobile-nav.scss
+// ==========================================================================
+
+.mobile-nav {
+	transition: all 0.9s cubic-bezier(0.85, 0, 0.15, 1);
+	.mobile-nav__link {
+		margin-top: $lns-space-small;
+		margin-bottom: $lns-space-small;
+		text-align: center;
+		overflow: hidden;
+		transition: $lns-transition;
+	}
+}
+
+.mobile-nav.mn-open {
+	height: 100vh;
+}
+
+.header__mobile-menu {
+	-webkit-transition: 1s -webkit-filter linear;
+	-moz-transition: 1s -moz-filter linear;
+	-moz-transition: 1s filter linear;
+	-ms-transition: 1s -ms-filter linear;
+	-o-transition: 1s -o-filter linear;
+	transition: 1s filter linear, 1s -webkit-filter linear;
+	mix-blend-mode: difference;
+}

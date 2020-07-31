@@ -61,3 +61,66 @@
 // };
 
 // filterCategories();
+
+//
+//
+//
+// ACCORDION
+const accItems = document.getElementsByClassName('accordion__item');
+const accToggles = document.getElementsByClassName('accordion__toggle');
+let heights = [];
+let closedHeight;
+let itemHeight;
+
+function getHeights() {
+	for (let i = 0; i < accItems.length; i++) {
+		heights.push(accItems[i].clientHeight);
+	}
+}
+function addListeners() {
+	for (let i = 0; i < accToggles.length; i++) {
+		accToggles[i].addEventListener(
+			'click',
+			() => {
+				toggleItem(accItems[i], i);
+			},
+			false
+		);
+	}
+}
+
+function toggleItem(el, num) {
+	itemHeight = el.style.height;
+	for (let i = 0; i < accItems.length; i++) {
+		if (window.innerWidth >= 992) {
+			accItems[i].style.height = '5rem';
+			closedHeight = '5rem';
+		} else if (window.innerWidth >= 480) {
+			accItems[i].style.height = '10rem';
+			closedHeight = '10rem';
+		} else {
+			accItems[i].style.height = '25rem';
+			closedHeight = '25rem';
+		}
+	}
+
+	if (itemHeight === `${heights[num]}px`) {
+		el.style.height = closedHeight;
+	} else {
+		el.style.height = `${heights[num]}px`;
+	}
+}
+
+// `element is ${el}, number is ${num}`
+
+function accInit() {
+	setTimeout(getHeights, 300);
+	setTimeout(addListeners, 400);
+	setTimeout(() => {
+		accToggles[0].click();
+		accToggles[0].click();
+	}, 500);
+}
+
+// accItems[i].style.height = heights[i];
+window.onload = accInit();

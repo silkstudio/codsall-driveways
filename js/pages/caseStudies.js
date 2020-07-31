@@ -70,3 +70,24 @@ $('.case-studies__hero-slider').on('beforeChange', function(event, slick, curren
 //
 // Init function
 window.onload = setTimeout(checkPageNumber, 1000);
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/

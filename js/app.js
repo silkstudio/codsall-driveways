@@ -25,12 +25,21 @@ const linkClasses = [
 	'arrow-link',
 	'site__logo',
 	'footer__link',
-	'btn'
+	'btn',
+	'return-link'
+];
+const lightPages = [
+	'/',
+	'/about',
+	'/case-studies',
+	'/blog'
 ];
 const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+const mobileNav = document.querySelector('.mobile-nav');
+const mobileNavInner = document.querySelector('.mobile-nav__inner');
+const mobileNavIcon = document.querySelector('.header__mobile-menu');
 let intViewportWidth = window.innerWidth;
 let intViewportHeight = window.innerHeight;
-// const mobileNav = document.querySelector('.mobile-nav');
 
 //
 //
@@ -62,12 +71,33 @@ const checkClasses = (el) => {
 	}
 };
 
+const checkNavColor = () => {
+	for (let i = 0; i < lightPages.length; i++) {
+		if (window.location.pathname === lightPages[i]) {
+			mobileNavIcon.classList.add('u-invert');
+			console.log('nav colour checked.');
+		}
+	}
+};
+
+// Open/close the state of mobile nav
+const changeMobileNavState = () => {
+	mobileNav.classList.toggle('mn-open');
+	setTimeout(() => {
+		mobileNavIcon.classList.toggle('is-active');
+	}, 100);
+};
+
 // Initialise page
 pageSetup = () => {
 	transitionElement.style.display = 'block';
 	//editorStyles.parentNode.removeChild(editorStyles);
-	//mobileNav.style.height = `${intViewportHeight}px`;
-	//mobileNav.style.width = `${intViewportWidth}px`;
+	mobileNavInner.style.height = `${intViewportHeight}px`;
+	mobileNavInner.style.width = `${intViewportWidth}px`;
+	mobileNavIcon.addEventListener('click', () => {
+		changeMobileNavState();
+	});
+	checkNavColor();
 	quicklink.listen();
 	if (!isMobile && intViewportWidth >= 992) {
 		luxy.init({
@@ -75,8 +105,8 @@ pageSetup = () => {
 			wrapperSpeed : 0.85
 		});
 	}
-	console.log('App loaded.');
 	transitionElement.classList.add('main__in-view');
+	console.log('App.loaded');
 };
 
 //
@@ -115,3 +145,33 @@ if (footerSubmit !== null) {
 // --- ONCE PAGE IS READY --- //
 window.onloadstart = setTransitionInitState();
 window.onload = setTimeout(pageSetup, 500);
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+
+// MOBILE NAV //

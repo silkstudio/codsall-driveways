@@ -88,4 +88,6 @@ scrollPrompt.addEventListener('click', () => {
 	window.scroll({ top: 0.75 * window.innerHeight, left: 0, behavior: 'smooth' });
 });
 
+// Winod init functions //
+
 setCaptions();

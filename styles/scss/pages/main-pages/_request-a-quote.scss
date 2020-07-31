@@ -1,0 +1,33 @@
+// ==========================================================================
+// Home.scss
+// ==========================================================================
+
+.error-message {
+	@include defaultRadius();
+}
+
+.success-message {
+	p:nth-child(2) {
+		margin-top: $lns-space-xsmall;
+		margin-bottom: $lns-space-xsmall;
+		@media screen and (max-width: $lns-breakpoint-tablet-max) {
+			margin-top: $lns-space-small;
+			margin-bottom: $lns-space-small;
+		}
+		@media screen and (max-width: $lns-breakpoint-mobile) {
+			margin-top: $lns-space-medium;
+			margin-bottom: $lns-space-medium;
+		}
+	}
+	a {
+		font-family: 'Museo Sans 700';
+		font-weight: 700;
+		transition: $lns-transition;
+	}
+}
+
+.raq-link {
+	p {
+		color: $lns-brand-white !important;
+	}
+}
