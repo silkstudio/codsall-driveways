@@ -43,12 +43,12 @@ const clickDragInit = () => {
 	updatedNextVal = cw;
 	updatedPrevVal = 0;
 	fcScrollMax = cw * (fcChildren.length - 2);
-	console.log(`variables initiated, as follows: 
-	fcChildren: 	${fcChildren}
-	cw: 			${cw}
-	updatedNextVal: ${updatedNextVal}
-	fcScrollMax: 	${fcScrollMax}
-	`);
+	// console.log(`variables initiated, as follows:
+	// fcChildren: 	${fcChildren}
+	// cw: 			${cw}
+	// updatedNextVal: ${updatedNextVal}
+	// fcScrollMax: 	${fcScrollMax}
+	// `);
 };
 
 // Recalculate metrics if the window is resized

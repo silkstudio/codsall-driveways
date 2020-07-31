@@ -24,5 +24,8 @@
 	-ms-transition: 1s -ms-filter linear;
 	-o-transition: 1s -o-filter linear;
 	transition: 1s filter linear, 1s -webkit-filter linear;
+}
+
+.hamburger-light {
 	mix-blend-mode: difference;
 }

@@ -75,6 +75,7 @@ const checkNavColor = () => {
 	for (let i = 0; i < lightPages.length; i++) {
 		if (window.location.pathname === lightPages[i]) {
 			mobileNavIcon.classList.add('u-invert');
+			mobileNavIcon.classList.add('hamburger-light');
 			console.log('nav colour checked.');
 		}
 	}
@@ -83,16 +84,13 @@ const checkNavColor = () => {
 // Open/close the state of mobile nav
 const changeMobileNavState = () => {
 	mobileNav.classList.toggle('mn-open');
-	setTimeout(() => {
-		mobileNavIcon.classList.toggle('is-active');
-	}, 100);
 };
 
 // Initialise page
 pageSetup = () => {
 	transitionElement.style.display = 'block';
 	editorStyles.parentNode.removeChild(editorStyles);
-	mobileNavInner.style.height = `${intViewportHeight}px`;
+	mobileNavInner.style.minHeight = `${intViewportHeight}px`;
 	mobileNavInner.style.width = `${intViewportWidth}px`;
 	mobileNavIcon.addEventListener('click', () => {
 		changeMobileNavState();
