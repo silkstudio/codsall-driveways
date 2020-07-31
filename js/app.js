@@ -91,7 +91,7 @@ const changeMobileNavState = () => {
 // Initialise page
 pageSetup = () => {
 	transitionElement.style.display = 'block';
-	//editorStyles.parentNode.removeChild(editorStyles);
+	editorStyles.parentNode.removeChild(editorStyles);
 	mobileNavInner.style.height = `${intViewportHeight}px`;
 	mobileNavInner.style.width = `${intViewportWidth}px`;
 	mobileNavIcon.addEventListener('click', () => {
