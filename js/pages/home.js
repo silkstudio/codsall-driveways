@@ -145,20 +145,6 @@ fcScrollContent.onmouseup = () => {
 	setTimeout(setTranslateValue, 1000);
 };
 
-//
-// Touch interactions
-fcScrollArrwRight.addEventListener('touchstart', fcScrollRight);
-fcScrollArrwRight.addEventListener('touchstart', fcScrollLeft);
-
-fcScrollContent.ontouchstart = () => {
-	//Fallback in case mouse leaves the viewport before releasing click
-	setTimeout(setTranslateValue, 900);
-};
-
-fcScrollContent.ontouchend = () => {
-	setTimeout(setTranslateValue, 1000);
-};
-
 window.onload = setTimeout(clickDragInit, 500);
 
 //
