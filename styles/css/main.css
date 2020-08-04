@@ -454,7 +454,7 @@ a:-webkit-any-link {
 .slick-list {
   position: relative;
   display: block;
-  overflow: hidden;
+  overflow: visible;
   margin: 0;
   padding: 0;
 }
@@ -604,6 +604,12 @@ a:-webkit-any-link {
   }
 }
 
+@media screen and (max-width: 991px) {
+  .featured-cases {
+    overflow: visible !important;
+  }
+}
+
 .featured-cases__content:hover .featured-cases__category {
   opacity: 0.5;
 }
@@ -614,8 +620,21 @@ a:-webkit-any-link {
   opacity: 1;
 }
 
-.featured-cases__scroll {
-  transition: all 0.9s cubic-bezier(0.19, 1, 0.22, 1);
+@media screen and (min-width: 992px) {
+  .featured-cases__scroll {
+    transition: all 0.9s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+}
+@media screen and (max-width: 991px) {
+  .featured-cases__scroll {
+    overflow: visible !important;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .featured-cases__list {
+    overflow: visible !important;
+  }
 }
 
 @media screen and (max-width: 991px) {

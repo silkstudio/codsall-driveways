@@ -11,7 +11,10 @@
 	.cta__form {
 		margin-top: $lns-space-small;
 		@media screen and (max-width: $lns-breakpoint-tablet-max) {
-			margin-top: $lns-space-medium;
+			margin-top: $lns-space-large;
+		}
+		@media screen and (max-width: $lns-breakpoint-mobile) {
+			margin-top: $lns-space-xlarge;
 		}
 	}
 }

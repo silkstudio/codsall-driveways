@@ -53,6 +53,12 @@
 	}
 }
 
+.featured-cases {
+	@media screen and (max-width: $lns-breakpoint-tablet-max) {
+		overflow: visible !important;
+	}
+}
+
 .featured-cases__content {
 	&:hover {
 		.featured-cases__category {
@@ -68,7 +74,18 @@
 }
 
 .featured-cases__scroll {
-	transition: $lns-transition;
+	@media screen and (min-width: $lns-breakpoint-desktop) {
+		transition: $lns-transition;
+	}
+	@media screen and (max-width: $lns-breakpoint-tablet-max) {
+		overflow: visible !important;
+	}
+}
+
+.featured-cases__list {
+	@media screen and (max-width: $lns-breakpoint-tablet-max) {
+		overflow: visible !important;
+	}
 }
 
 #fc-arrow--left {
@@ -86,9 +103,9 @@
 		}
 	}
 	.hr {
-		margin: $lns-space-medium auto;
+		margin: (0.75 * $lns-space-large) auto;
 		@media screen and (max-width: $lns-breakpoint-tablet-max) {
-			margin: $lns-space-large auto;
+			margin: (0.75 * $lns-space-xlarge) auto;
 		}
 		@media screen and (max-width: $lns-breakpoint-mobile) {
 			margin: $lns-space-xlarge auto;
