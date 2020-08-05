@@ -20,13 +20,10 @@
 const heroSliderContent = document.querySelectorAll('.hero-slider__content');
 const heroNavNext = document.getElementById('cs-hero-nav__next');
 const heroNavPrev = document.getElementById('cs-hero-nav__prev');
-let splitURL;
-let pageNumber;
-let curScroll;
 
 //
 // Slick slider
-$(document).ready(function() {
+const sliderInit = () => {
 	$('.case-studies__hero-slider').slick({
 		infinite       : true,
 		autoplay       : true,
@@ -42,26 +39,28 @@ $(document).ready(function() {
 		pauseOnHover   : false,
 		swipe          : false,
 		swipeToSlide   : false,
+		arrows         : true,
 		nextArrow      : heroNavNext,
 		prevArrow      : heroNavPrev
 	});
-	setTimeout(() => {
-		heroSliderContent[0].style.opacity = '1';
-	}, 450);
-	setTimeout(() => {
-		heroSliderContent[0].style.opacity = '0';
-	}, 7000);
-});
+
+	for (let i = 0; i < heroSliderContent.length; i++) {
+		if (i !== 0) {
+			heroSliderContent[i].style.opacity = '0';
+		}
+	}
+};
 
 $('.case-studies__hero-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-	// heroSliderContent[currentSlide].style.opacity = '0';
-	setTimeout(() => {
-		heroSliderContent[nextSlide].style.opacity = '1';
-	}, 900);
-	setTimeout(() => {
-		heroSliderContent[nextSlide].style.opacity = '0';
-	}, 8000);
+	heroSliderContent[currentSlide].style.opacity = '0';
 });
+
+$('.case-studies__hero-slider').on('afterChange', function(slick, currentSlide) {
+	setTimeout(() => {
+		heroSliderContent[currentSlide.currentSlide].style.opacity = '1';
+	}, 450);
+});
+
 //
 //
 //
@@ -69,7 +68,7 @@ $('.case-studies__hero-slider').on('beforeChange', function(event, slick, curren
 //
 //
 // Init function
-window.onload = setTimeout(checkPageNumber, 1000);
+(window.onload = setTimeout(sliderInit, 500)), setTimeout(checkPageNumber, 1000);
 
 /*
 

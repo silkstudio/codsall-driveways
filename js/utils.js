@@ -16,6 +16,10 @@
 // Utils.js - Utility functions used accross the app
 // ==========================================================================
 
+let splitURL;
+let pageNumber;
+let curScroll;
+
 //
 //Check page number to see if the page needs to be scrolled
 function checkPageNumber() {

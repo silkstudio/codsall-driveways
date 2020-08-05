@@ -33,6 +33,7 @@ let updatedNextVal;
 let updatedPrevVal;
 let fcScrollMax;
 let scrollInstance;
+let fcScroll;
 
 //
 // Init variables
@@ -44,12 +45,21 @@ const clickDragInit = () => {
 	updatedNextVal = cw;
 	updatedPrevVal = 0;
 	fcScrollMax = cw * (fcChildren.length - 2);
-	console.log(`variables initiated, as follows:
-	fcChildren: 	${fcChildren}
-	cw: 			${cw}
-	updatedNextVal: ${updatedNextVal}
-	fcScrollMax: 	${fcScrollMax}
-	`);
+
+	// console.log(`variables initiated, as follows:
+	// fcChildren: 	${fcChildren}
+	// cw: 			${cw}
+	// updatedNextVal: ${updatedNextVal}
+	// fcScrollMax: 	${fcScrollMax}
+	// `);
+
+	return (fcScroll = new ScrollBooster({
+		viewport   : fcScrollContainer,
+		content    : fcScrollContent,
+		direction  : 'horizontal',
+		scrollMode : 'transform',
+		friction   : 0.1
+	}));
 };
 
 // Recalculate metrics if the window is resized
@@ -58,50 +68,44 @@ const recalcMetrics = () => {
 };
 window.onresize = setTimeout(recalcMetrics, 1000);
 
-//
-// Define new scrollbooster instance
-
-// if (!isMobile || window.innerWidth >= 992) {
-// 	scrollInstance = new ScrollBooster({
-// 		viewport   : fcScrollContainer,
-// 		content    : fcScrollContent,
-// 		direction  : 'horizontal',
-// 		scrollMode : 'transform',
-// 		friction   : 0.1
-// 	});
-// } else {
-// 	scrollInstance = null;
-// }
-
-const fcScroll = new ScrollBooster({
-	viewport   : fcScrollContainer,
-	content    : fcScrollContent,
-	direction  : 'horizontal',
-	scrollMode : 'transform',
-	friction   : 0.1
-});
+// const fcScroll = new ScrollBooster({
+// 	viewport   : fcScrollContainer,
+// 	content    : fcScrollContent,
+// 	direction  : 'horizontal',
+// 	scrollMode : 'transform',
+// 	friction   : 0.1
+// });
 
 //
 // Update the arrow values if module is clicked-and-dragged
 const setTranslateValue = () => {
 	// Get the transform value
 	translateX_Val = fcScrollContent.style.transform;
+	// console.log(`1. Get translatedX_val: ${translateX_Val}`);
 	// Convert it to a number
 	translateX_Val = Math.round(translateX_Val.replace(/[^\d.]/g, ''));
+	// console.log(`2. convert it to a number: ${translateX_Val}`);
 	// Calculate the stepCount
 	stepCount = Math.floor(translateX_Val / cw);
+	// console.log(`3. calculate the step count: ${stepCount}`);
 	// Set the new next and previous values
 	updatedNextVal = stepCount * cw + cw;
-	// console.log(`after drag, the updated next value is ${updatedNextVal}`);
+	// console.log(`4. Set the new next value: ${updatedNextVal}`);
 	updatedPrevVal = stepCount * cw;
-	// console.log(`after drag, the updated prev value is ${updatedPrevVal}`);
+	// console.log(`4b. Set the updated prev value: ${updatedPrevVal}`);
 
 	// If user has reached the end, stop them from scrolling any further
 	if (updatedNextVal >= fcScrollMax) {
 		updatedNextVal = fcScrollMax;
+		// console.log(
+		// 	`5. If the updated next value is greater than the scroll max (${fcScrollMax}), set the updated value to the same as the scroll max : ${updatedNextVal}`
+		// );
 	} else if (updatedPrevVal <= 0) {
 		updatedPrevVal = 0;
 		updatedNextVal = cw;
+		// console.log(
+		// 	`5b. Else if the updated prev value is less than or equal to 0, let the prev value = 0 and the next value = cw (${cw})`
+		// );
 	}
 };
 
@@ -156,13 +160,11 @@ if (!isMobile || window.innerWidth >= 992) {
 
 	fcScrollContent.onmousedown = () => {
 		fcScrollContent.style.cursor = 'grabbing';
-		//Fallback in case mouse leaves the viewport before releasing click
-		setTimeout(setTranslateValue, 900);
 	};
 
 	fcScrollContent.onmouseup = () => {
 		fcScrollContent.style.cursor = 'grab';
-		setTimeout(setTranslateValue, 1000);
+		setTranslateValue();
 	};
 }
 
