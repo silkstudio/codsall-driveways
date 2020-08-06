@@ -103,7 +103,7 @@
 		}
 	}
 	.hr {
-		margin: (0.75 * $lns-space-large) auto;
+		margin: $lns-space-large auto;
 		@media screen and (max-width: $lns-breakpoint-tablet-max) {
 			margin: (0.75 * $lns-space-xlarge) auto;
 		}
