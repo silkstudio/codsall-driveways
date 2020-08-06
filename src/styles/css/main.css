@@ -348,7 +348,12 @@ a:-webkit-any-link {
 }
 @media screen and (max-width: 991px) {
   .section.cta__section .cta__form {
-    margin-top: 5rem;
+    margin-top: 10rem;
+  }
+}
+@media screen and (max-width: 479px) {
+  .section.cta__section .cta__form {
+    margin-top: 15rem;
   }
 }
 
@@ -647,11 +652,11 @@ a:-webkit-any-link {
   margin-top: 1rem;
 }
 .why__section .hr {
-  margin: 5rem auto;
+  margin: 7.5rem auto;
 }
 @media screen and (max-width: 991px) {
   .why__section .hr {
-    margin: 10rem auto;
+    margin: 11.25rem auto;
   }
 }
 @media screen and (max-width: 479px) {
