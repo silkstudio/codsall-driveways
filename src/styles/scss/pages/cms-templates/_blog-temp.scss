@@ -39,6 +39,7 @@
 	.blog-post__content {
 		p + figure {
 			padding: 5rem 0rem 0rem 0rem;
+			max-width: 100% !important;
 			@media screen and (max-width: $lns-breakpoint-mobile) {
 				padding: 17.5rem 0rem 0rem 0rem;
 			}

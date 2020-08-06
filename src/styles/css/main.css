@@ -1663,6 +1663,7 @@ a:-webkit-any-link {
 }
 .section.blog__post .blog-post__content p + figure {
   padding: 5rem 0rem 0rem 0rem;
+  max-width: 100% !important;
 }
 @media screen and (max-width: 479px) {
   .section.blog__post .blog-post__content p + figure {
